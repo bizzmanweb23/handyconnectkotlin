@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPagerHome"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"/>
+
+        <com.github.fajaragungpramana.dotsindicator.DotsIndicator
+            android:id="@+id/dotIndicatorHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            app:dotColor="@color/light_brown"
+            app:dotSize="@dimen/_7sdp"
+            android:layout_gravity="center"
+            app:dotSpacing="@dimen/_3sdp"
+            app:dotSelectedColor="@color/brown" />
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingVertical="@dimen/_20sdp"
+          android:paddingHorizontal="@dimen/_12sdp"
+          android:orientation="vertical">
+
+          <TextView
+              style="@style/tvSemiBold"
+              android:textSize="@dimen/_12sdp"
+              android:textColor="@color/heading_color"
+              android:text="@string/services"/>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/_20sdp"
+              android:orientation="horizontal">
+
+              <LinearLayout
+                  android:id="@+id/paintingSec"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:layout_height="@dimen/_70sdp"
+                  android:paddingHorizontal="@dimen/_8sdp"
+                  android:gravity="center"
+                  android:background="@drawable/rect_border"
+                  android:orientation="vertical">
+
+                  <ImageView
+                      android:layout_width="@dimen/_18sdp"
+                      android:layout_height="@dimen/_18sdp"
+                      android:layout_marginTop="@dimen/_5sdp"
+                      android:layout_gravity="center"
+                      android:src="@drawable/paintbrush"/>
+
+                  <TextView
+                      style="@style/tvSemiBold"
+                      android:layout_height="@dimen/_30sdp"
+                      android:textSize="@dimen/_7sdp"
+                      android:textAllCaps="true"
+                      android:gravity="center"
+                      android:layout_gravity="center"
+                      android:layout_marginTop="@dimen/_5sdp"
+                      android:textColor="@color/heading_color"
+                      android:text="@string/painting"/>
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:id="@+id/doorRepairSec"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:layout_marginHorizontal="@dimen/_8sdp"
+                  android:layout_height="@dimen/_70sdp"
+                  android:paddingHorizontal="@dimen/_8sdp"
+                  android:gravity="center"
+                  android:background="@drawable/rect_border"
+                  android:orientation="vertical">
+
+                  <ImageView
+                      android:layout_width="@dimen/_18sdp"
+                      android:layout_height="@dimen/_18sdp"
+                      android:layout_gravity="center"
+                      android:layout_marginTop="@dimen/_5sdp"
+                      android:src="@drawable/doorrepair"/>
+
+                  <TextView
+                      style="@style/tvSemiBold"
+                      android:textSize="@dimen/_8sdp"
+                      android:textAllCaps="true"
+                      android:gravity="center"
+                      android:layout_height="@dimen/_30sdp"
+                      android:layout_gravity="center"
+                      android:layout_marginTop="@dimen/_5sdp"
+                      android:textColor="@color/heading_color"
+                      android:text="@string/door_repair"/>
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:id="@+id/electricalSec"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:layout_height="@dimen/_70sdp"
+                  android:paddingHorizontal="@dimen/_8sdp"
+                  android:gravity="center"
+                  android:background="@drawable/rect_border"
+                  android:orientation="vertical">
+
+                  <ImageView
+                      android:layout_width="@dimen/_18sdp"
+                      android:layout_height="@dimen/_18sdp"
+                      android:layout_gravity="center"
+                      android:layout_marginTop="@dimen/_5sdp"
+                      android:src="@drawable/electrical"/>
+
+                  <TextView
+                      style="@style/tvSemiBold"
+                      android:textSize="@dimen/_8sdp"
+                      android:layout_height="@dimen/_30sdp"
+                      android:textAllCaps="true"
+                      android:gravity="center"
+                      android:layout_gravity="center"
+                      android:layout_marginTop="@dimen/_5sdp"
+                      android:textColor="@color/heading_color"
+                      android:text="@string/electrical"/>
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:id="@+id/plumbingSec"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:layout_marginStart="@dimen/_8sdp"
+                  android:layout_height="@dimen/_70sdp"
+                  android:paddingHorizontal="@dimen/_8sdp"
+                  android:gravity="center"
+                  android:background="@drawable/rect_border"
+                  android:orientation="vertical">
+
+                  <ImageView
+                      android:layout_width="@dimen/_18sdp"
+                      android:layout_height="@dimen/_18sdp"
+                      android:layout_gravity="center"
+                      android:layout_marginTop="@dimen/_5sdp"
+                      android:src="@drawable/plumbing"/>
+
+                  <TextView
+                      style="@style/tvSemiBold"
+                      android:textSize="@dimen/_8sdp"
+                      android:layout_height="@dimen/_30sdp"
+                      android:textAllCaps="true"
+                      android:gravity="center"
+                      android:layout_gravity="center"
+                      android:layout_marginTop="@dimen/_5sdp"
+                      android:textColor="@color/heading_color"
+                      android:text="@string/plumbing"/>
+
+              </LinearLayout>
+
+
+          </LinearLayout>
+
+          <TextView
+              android:id="@+id/butSeeAll"
+              style="@style/customButton"
+              android:layout_width="@dimen/_150sdp"
+              android:textSize="@dimen/_11sdp"
+              android:layout_gravity="center"
+              android:gravity="center"
+              android:padding="@dimen/_10sdp"
+              android:layout_marginVertical="@dimen/_15sdp"
+              android:background="@drawable/round_back"
+              android:text="@string/see_all"/>
+
+          <TextView
+              style="@style/tvSemiBold"
+              android:textSize="@dimen/_12sdp"
+              android:paddingTop="@dimen/_10sdp"
+              android:textColor="@color/heading_color"
+              android:text="@string/our_works"/>
+
+          <androidx.recyclerview.widget.RecyclerView
+              android:id="@+id/recycleWorks"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              tools:listitem="@layout/items_our_works"
+              android:layout_marginVertical="@dimen/_15sdp"
+              app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+              android:orientation="horizontal"/>
+
+      </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.handyconnect">
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HandyConnect"
+        tools:replace="allowBackup">
+        <activity
+            android:name=".activities.optimizedView.ViewAppointmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.optimizedView.BookAppointmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.optimizedView.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.authetication.IntroActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RequestReceivedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SelectOptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.GetStartedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.InfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SelectLanguageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_gravity="center">
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo"/>
+    </LinearLayout>
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/logoImage"
+        android:layout_weight="3"
+        android:layout_height="0dp">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight=".4"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/butSkip"
+            style="@style/tvSemiBold"
+            android:background="@drawable/rectangular_back"
+            android:backgroundTint="@color/brown"
+            android:paddingHorizontal="@dimen/_18sdp"
+            android:paddingVertical="@dimen/_6sdp"
+            android:text="@string/skip"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp" />
+
+        <com.github.fajaragungpramana.dotsindicator.DotsIndicator
+            android:id="@+id/dotIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:paddingVertical="@dimen/_10sdp"
+            app:dotColor="@color/light_brown"
+            app:dotSelectedColor="@color/brown"
+            app:dotSize="@dimen/_8sdp"
+            app:dotSpacing="@dimen/_3sdp" />
+
+        <TextView
+            android:id="@+id/butNext"
+            style="@style/tvSemiBold"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/rectangular_back"
+            android:backgroundTint="@color/brown"
+            android:paddingHorizontal="@dimen/_18sdp"
+            android:paddingVertical="@dimen/_6sdp"
+            android:text="@string/next"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

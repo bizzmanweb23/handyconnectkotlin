@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolbarSec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingVertical="@dimen/_20sdp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/aboutusimg" />
+
+            <TextView
+                android:id="@+id/butMenu"
+                style="@style/tvSemiBold"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:text="@string/about_us"
+                android:textAllCaps="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/brown"
+                android:textSize="@dimen/_14sdp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/brown"/>
+
+                <ImageView
+                    android:layout_width="@dimen/_2sdp"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_marginStart="@dimen/_1sdp"
+                    android:src="@drawable/ellipse"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                style="@style/tvRegular"
+                android:lineSpacingExtra="@dimen/_3sdp"
+                android:textSize="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:text="@string/paragraph_one"/>
+
+            <TextView
+                style="@style/tvRegular"
+                android:lineSpacingExtra="@dimen/_3sdp"
+                android:textSize="@dimen/_8sdp"
+                android:layout_marginVertical="@dimen/_12sdp"
+                android:textColor="@color/black"
+                android:text="@string/paragraph_two"/>
+
+            <TextView
+                style="@style/tvRegular"
+                android:lineSpacingExtra="@dimen/_3sdp"
+                android:textSize="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:text="@string/paragraph_three"/>
+
+            <TextView
+                style="@style/tvRegular"
+                android:lineSpacingExtra="@dimen/_3sdp"
+                android:textSize="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/paragraph_four"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/_180sdp"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:background="@color/brown"/>
+
+                <ImageView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:src="@drawable/ellipse"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

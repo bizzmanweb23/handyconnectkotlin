@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/drawable/bottom_menu_selector.xml" value="0.1715" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/drawable/brown_stroke.xml" value="0.1715" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/drawable/customtoggle.xml" value="0.1715" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/drawable/dotted_stroke.xml" value="0.1715" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/drawable/et_bakground.xml" value="0.1715" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/drawable/otp_selector.xml" value="0.1715" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/drawable/otpback.xml" value="0.1715" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/drawable/rect_border.xml" value="0.1715" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/drawable/rectangular_back.xml" value="0.1715" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/drawable/round_back.xml" value="0.1715" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/drawable/text_selector.xml" value="0.1715" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/drawable/top_rounded_corner.xml" value="0.1715" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/drawable/white_circular_back.xml" value="0.113" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/activity_book_appointment.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/activity_forgot_password.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/activity_get_started.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/activity_info.xml" value="0.25" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/activity_intro.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/activity_request_received.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/activity_select_language.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/activity_select_option.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/activity_view_appointment.xml" value="0.25" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/fragment_about_us.xml" value="0.22" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/fragment_appointment.xml" value="0.33" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/item_bookappointment.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/items_appointment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/items_book_appointment.xml" value="0.22" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/items_images.xml" value="0.1728395061728395" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/items_info.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/items_introscreens.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/items_our_works.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/items_past_appointment.xml" value="0.22" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/items_services.xml" value="0.25" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/items_tobeserviced.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/items_upload_images.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/nav_main_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/otp_verification_popup.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/layout/thanku_popup.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/HandyConnect/app/src/main/res/menu/main_menu.xml" value="0.20416666666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

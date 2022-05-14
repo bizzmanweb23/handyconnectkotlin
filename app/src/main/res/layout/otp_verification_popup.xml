@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingVertical="@dimen/_35sdp"
+    android:paddingHorizontal="@dimen/_10sdp"
+    android:background="@color/light_gray_two">
+
+    <ImageView
+        android:id="@+id/mailbox"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/otpmail"/>
+
+    <TextView
+        android:id="@+id/tvVerify"
+        style="@style/tvBold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/mailbox"
+        android:text="@string/verification"
+        android:textSize="@dimen/_12sdp"
+        android:layout_marginVertical="@dimen/_15sdp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tvOtpHeading"
+        style="@style/tvBold"
+        android:layout_below="@+id/tvVerify"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:layout_marginVertical="@dimen/_12sdp"
+        android:text="@string/enter_otp_text"
+        android:textColor="@color/text_Gray"
+        android:textSize="@dimen/_9sdp" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_below="@+id/tvOtpHeading">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_15sdp">
+
+            <com.mukesh.OtpView
+                android:id="@+id/otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:focusable="true"
+                android:enabled="true"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+                android:itemBackground="@drawable/otp_selector"
+                android:textColor="@color/black"
+                app:OtpHideLineWhenFilled="true"
+                app:OtpItemCount="4"
+                app:OtpItemHeight="@dimen/_35sdp"
+                app:OtpItemSpacing="@dimen/_15sdp"
+                app:OtpItemWidth="@dimen/_35sdp"
+                app:OtpLineColor="@color/white"
+                app:OtpLineWidth="0dp"
+                app:OtpViewType="line" />
+
+            <TextView
+                android:id="@+id/butOtpSend"
+                style="@style/customButton"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_below="@+id/otp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_30sdp"
+                android:layout_marginVertical="@dimen/_20sdp"
+                android:background="@drawable/round_back"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_8sdp"
+                android:text="@string/continue_text"
+                android:textAllCaps="true"
+                android:textSize="@dimen/_11sdp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

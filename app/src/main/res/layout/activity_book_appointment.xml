@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/mainToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/brown"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_30sdp">
+
+            <TextView
+                android:id="@+id/butBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/round_back"
+                android:backgroundTint="@color/light_gray_two"
+                android:fontFamily="@font/semibold"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_3sdp"
+                android:text="@string/back"
+                android:textColor="@color/dark_gray_two"
+                android:textSize="@dimen/_8sdp" />
+
+
+        </RelativeLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circularImageView"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/image_12"
+            app:layout_constraintBottom_toBottomOf="@+id/mainToolbar"
+            app:layout_constraintTop_toBottomOf="@+id/mainToolbar"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/serviceName"
+        style="@style/tvSemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_15sdp"
+        android:maxLines="2"
+        android:gravity="center"
+        android:text="@string/painting"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleBookAppointment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_20sdp"
+        android:paddingHorizontal="@dimen/_12sdp"
+        tools:listitem="@layout/items_book_appointment"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"/>
+
+
+</LinearLayout>
