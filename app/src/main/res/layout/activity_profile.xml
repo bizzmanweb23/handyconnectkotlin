@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/imgSec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/brown"
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/_28sdp">
+
+        <TextView
+            android:id="@+id/butBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:background="@drawable/round_back"
+            android:backgroundTint="@color/light_gray_two"
+            android:fontFamily="@font/semibold"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_3sdp"
+            android:text="@string/back"
+            android:textColor="@color/dark_gray_two"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImg"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/profile_img"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/_12sdp" />
+
+        <TextView
+            style="@style/tvSemiBold"
+            android:layout_below="@+id/profileImg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:text="Jeo Deo"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imgSec"
+        android:orientation="vertical">
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_165sdp"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/cardMainSec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/_8sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10sdp"
+                        android:background="@drawable/round_grey_stroke"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/_140sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:src="@drawable/logotwo" />
+
+
+                        <LinearLayout
+                            android:id="@+id/emailSec"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/et_bakground"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:paddingHorizontal="@dimen/_15sdp"
+                            android:paddingVertical="@dimen/_8sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_18sdp"
+                                android:layout_height="@dimen/_18sdp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/email" />
+
+                            <TextView
+                                style="@style/tvRegular"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="@dimen/_8sdp"
+                                android:background="@null"
+                                android:text="jeo.deo@gmail.com"
+                                android:textColor="@color/tab_heading_two"
+                                android:textColorHint="@color/tab_heading_two" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/phoneSec"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/_10sdp"
+                            android:background="@drawable/et_bakground"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/_15sdp"
+                            android:paddingVertical="@dimen/_8sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_18sdp"
+                                android:layout_height="@dimen/_18sdp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/phone" />
+
+                            <TextView
+                                style="@style/tvRegular"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="@dimen/_8sdp"
+                                android:background="@null"
+                                android:text="+65 1234567890"
+                                android:textColor="@color/tab_heading_two"
+                                android:textColorHint="@color/tab_heading_two" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/locationSec"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/et_bakground"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/_15sdp"
+                            android:paddingVertical="@dimen/_8sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_18sdp"
+                                android:layout_height="@dimen/_18sdp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/location" />
+
+                            <TextView
+                                style="@style/tvRegular"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="@dimen/_8sdp"
+                                android:background="@null"
+                                android:text="D/65 om Nagar New delhi 110044"
+                                android:textColor="@color/tab_heading_two"
+                                android:textColorHint="@color/tab_heading_two" />
+
+
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/checkedItem"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/recycleInfo"
+                            android:layout_marginVertical="@dimen/_8sdp"
+                            android:layout_marginHorizontal="@dimen/_12sdp"
+                            android:text="@string/service_location_and_billing_location_is_the_same"
+                            android:textColor="@color/tab_heading_two"
+                            android:textSize="@dimen/_9sdp" />
+
+                        <LinearLayout
+                            android:id="@+id/locationTwoSec"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/et_bakground"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/_30sdp"
+                            android:paddingHorizontal="@dimen/_15sdp"
+                            android:paddingVertical="@dimen/_8sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_18sdp"
+                                android:layout_height="@dimen/_18sdp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/location" />
+
+                            <TextView
+                                style="@style/tvRegular"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="@dimen/_8sdp"
+                                android:background="@null"
+                                android:text="D/65 om Nagar New delhi 110044"
+                                android:textColor="@color/tab_heading_two"
+                                android:textColorHint="@color/tab_heading_two" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

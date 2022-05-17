@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_180sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp"
+            android:background="@drawable/rectangular_back">
+
+            <TextView
+                android:id="@+id/userId"
+                style="@style/tvSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#143-455"
+                android:textAllCaps="true"
+                android:textColor="@color/dark_gray_four"
+                android:textSize="@dimen/_12sdp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_8sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/serviceName"
+                    style="@style/tvSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/painting"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    style="@style/tvSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="150.00$"
+                    android:textAllCaps="true"
+                    android:textColor="@color/dark_gray_five"
+                    android:textSize="@dimen/_12sdp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvDate"
+                style="@style/tvSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16-03-2022, 10:00am"
+                android:textAllCaps="true"
+                android:textColor="@color/brown"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                style="@style/tvSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone: 0660182634"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:textColor="@color/dark_gray_four"
+                android:textSize="@dimen/_12sdp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/tvSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status"
+                    android:textColor="@color/dark_gray_four"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    style="@style/tvSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem Ipsum"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/_12sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/butAccept"
+                    style="@style/tvSemiBold"
+                    android:background="@drawable/rectangular_back"
+                    android:backgroundTint="@color/light_gray_four"
+                    android:paddingHorizontal="@dimen/_14sdp"
+                    android:paddingVertical="@dimen/_4sdp"
+                    android:text="@string/accept"
+                    android:textColor="@color/dark_gray_five"
+                    android:textSize="@dimen/_11sdp" />
+
+                <TextView
+                    android:id="@+id/butReject"
+                    style="@style/tvSemiBold"
+                    android:background="@drawable/rectangular_back"
+                    android:backgroundTint="@color/light_red"
+                    android:paddingHorizontal="@dimen/_14sdp"
+                    android:paddingVertical="@dimen/_4sdp"
+                    android:text="@string/rejected"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_11sdp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

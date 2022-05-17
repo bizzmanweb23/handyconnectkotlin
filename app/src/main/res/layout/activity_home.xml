@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:tag="@string/tag_menu"
-        app:header="@layout/nav_main_layout"/>
+        app:header="@layout/nav_main_layout" />
 
     <RelativeLayout
         android:layout_width="match_parent"

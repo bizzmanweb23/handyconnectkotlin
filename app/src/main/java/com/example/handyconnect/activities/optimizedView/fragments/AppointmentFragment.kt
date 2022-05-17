@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.get
 import com.example.handyconnect.R
 import com.example.handyconnect.activities.optimizedView.HomeActivity
 import com.example.handyconnect.adapters.AppointmentAdapter
@@ -32,6 +33,16 @@ class AppointmentFragment : Fragment() {
 
         setAppointmentAdapter()
         setTablayouts()
+        clicks()
+    }
+
+    private fun clicks() {
+        butBack.setOnClickListener {
+            tabLayout.getTabAt(0)?.select()
+            pastAppointmentToolbar.visibility = View.GONE
+            toolbarSec.visibility = View.VISIBLE
+            setAppointmentAdapter()
+        }
     }
 
     private fun setTablayouts() {

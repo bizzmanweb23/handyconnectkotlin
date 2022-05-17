@@ -12,6 +12,18 @@
         android:theme="@style/Theme.HandyConnect"
         tools:replace="allowBackup">
         <activity
+            android:name=".activities.optimizedView.ReferalSystemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.optimizedView.FeedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.optimizedView.ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.optimizedView.ViewAppointmentActivity"
             android:exported="false" />
         <activity

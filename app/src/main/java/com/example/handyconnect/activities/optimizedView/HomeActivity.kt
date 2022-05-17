@@ -1,12 +1,13 @@
 package com.example.handyconnect.activities.optimizedView
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import com.example.handyconnect.R
-import com.example.handyconnect.activities.optimizedView.fragments.AboutUsFragment
-import com.example.handyconnect.activities.optimizedView.fragments.AppointmentFragment
-import com.example.handyconnect.activities.optimizedView.fragments.HomeFragment
+import com.example.handyconnect.activities.MainActivity
+import com.example.handyconnect.activities.NotificationActivity
+import com.example.handyconnect.activities.optimizedView.fragments.*
 import com.google.android.material.navigation.NavigationBarView
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.nav_main_layout.view.*
@@ -50,10 +51,14 @@ class HomeActivity : AppCompatActivity() {
                             .commit()
                     }
                     R.id.quotation ->{
-
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.container, QuotationFragment())
+                            .commit()
                     }
                     R.id.profile -> {
-
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.container, ProfileFragment())
+                            .commit()
                     }
                 }
                 return true
@@ -75,6 +80,37 @@ class HomeActivity : AppCompatActivity() {
 
         drawer.imgCross.setOnClickListener {
             drawer.closeDrawer()
+        }
+        drawer.sec_engageNow.setOnClickListener {
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+        }
+        drawer.sec_profile.setOnClickListener {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container, ProfileFragment())
+                .commit()
+            drawer.closeDrawer()
+        }
+        drawer.sec_newsFeed.setOnClickListener {
+            startActivity(Intent(this,FeedActivity::class.java))
+
+        }
+        drawer.sec_notification.setOnClickListener {
+            startActivity(Intent(this,NotificationActivity::class.java))
+
+        }
+        drawer.sec_referalSystem.setOnClickListener {
+          //  startActivity(Intent(this,ReferalSystemActivity::class.java))
+
+        }
+        drawer.sec_payment.setOnClickListener {
+
+        }
+        drawer.sec_liveChat.setOnClickListener {
+
+        }
+        drawer.sec_transaction.setOnClickListener {
+
         }
     }
 

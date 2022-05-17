@@ -7,9 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.handyconnect.R
-import com.example.handyconnect.activities.optimizedView.BookAppointmentActivity
 import com.example.handyconnect.activities.optimizedView.ViewAppointmentActivity
-import kotlinx.android.synthetic.main.items_appointment.view.*
 import kotlinx.android.synthetic.main.items_book_appointment.view.*
 
 class BookAppointmentAdapter(var context : Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

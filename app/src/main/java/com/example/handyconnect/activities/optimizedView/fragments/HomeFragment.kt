@@ -10,8 +10,10 @@ import com.example.handyconnect.R
 import com.example.handyconnect.activities.InfoActivity
 import com.example.handyconnect.activities.MainActivity
 import com.example.handyconnect.activities.RegisterActivity
+import com.example.handyconnect.activities.optimizedView.HomeActivity
 import com.example.handyconnect.adapters.HomeViewPagerAdapter
 import com.example.handyconnect.adapters.OurWorksAdapter
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -21,14 +23,16 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle? ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        (requireContext() as HomeActivity).toolbarSec.visibility = View.VISIBLE
+
         setViewPagerAdapter()
         setAdapter()
         clicks()

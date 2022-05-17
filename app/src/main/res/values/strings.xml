@@ -86,4 +86,11 @@
     <string name="change_photos">Change Photos</string>
     <string name="your_photos">Your Photos</string>
     <string name="confirm_your_appointment">Confirm your appointment</string>
+    <string name="status">Status:</string>
+    <string name="accept">Accept</string>
+    <string name="rejected">Rejected</string>
+    <string name="follow">Follow</string>
+    <string name="all_notifications">All Notifications</string>
+    <string name="you_recived_a_payment_of_860_00_from_yogie_ismanda">You recived a payment of <font color="#00B2FF">$860.00 </font>from <b>Yogie Ismanda</b></string>
+    <string name="you_have_250_point">You have 250 Point</string>
 </resources>

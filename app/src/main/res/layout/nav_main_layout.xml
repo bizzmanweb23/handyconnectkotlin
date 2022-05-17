@@ -34,6 +34,7 @@
 
 
     <LinearLayout
+        android:id="@+id/sec_engageNow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_20sdp"
@@ -56,6 +57,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/sec_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/_15sdp"
@@ -77,6 +79,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/sec_newsFeed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/_15sdp"
@@ -98,6 +101,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/sec_notification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/_15sdp"
@@ -120,6 +124,7 @@
 
 
     <LinearLayout
+        android:id="@+id/sec_referalSystem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/_15sdp"
@@ -141,6 +146,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/sec_payment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/_15sdp"
@@ -162,6 +168,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/sec_liveChat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/_15sdp"
@@ -183,6 +190,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/sec_transaction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/_15sdp"

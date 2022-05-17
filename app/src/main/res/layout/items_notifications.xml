@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_10sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="0.6"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            app:civ_border_color="@color/brown"
+            app:civ_border_width="@dimen/_1sdp"
+            android:src="@drawable/profile_img"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+           style="@style/tvRegular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp"
+            android:text="@string/you_recived_a_payment_of_860_00_from_yogie_ismanda"/>
+
+        <TextView
+            style="@style/tvRegular"
+            android:textColor="@color/text_Gray"
+            android:textSize="@dimen/_11sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:text="09:20 Am"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="0.6"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/butMenu"
+            style="@style/tvSemiBold"
+            android:background="@drawable/rectangular_back"
+            android:backgroundTint="@color/brown"
+            android:paddingHorizontal="@dimen/_14sdp"
+            android:paddingVertical="@dimen/_5sdp"
+            android:text="Pay"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11sdp" />
+    </LinearLayout>
+
+</LinearLayout>
