@@ -16,6 +16,7 @@ class BookAppointmentActivity : AppCompatActivity() {
 
         setAdapter()
         clicks()
+
     }
 
     private fun clicks() {
@@ -28,4 +29,5 @@ class BookAppointmentActivity : AppCompatActivity() {
         adapter = BookAppointmentAdapter(this)
         recycleBookAppointment.adapter = adapter
     }
+
 }

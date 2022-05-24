@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/brown">
+
+    <LinearLayout
+        android:id="@+id/toolbarSec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_30sdp"
+        android:paddingHorizontal="@dimen/_12sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_gravity="end"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/tvSemiBold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:text="Jeo Deo"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/_2sdp"
+            android:src="@drawable/profile_img"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingVertical="@dimen/_18sdp"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:orientation="vertical"
+        android:background="@drawable/top_rounded_corner_two"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarSec">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp">
+
+            <TextView
+                style="@style/tvSemiBold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:text="@string/transaction"/>
+
+            <TextView
+                style="@style/tvRegular"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="right"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:text="@string/sort_by_date"
+                android:textColor="@color/text_Gray" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            tools:listitem="@layout/items_transactions"
+            android:layout_marginVertical="@dimen/_14sdp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

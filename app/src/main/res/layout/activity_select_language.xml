@@ -72,10 +72,10 @@
 
                     <ToggleButton
                         android:id="@+id/toggle_english"
-                        android:layout_width="@dimen/_35sdp"
-                        android:layout_height="@dimen/_20sdp"
+                        android:layout_width="@dimen/_43sdp"
+                        android:layout_height="@dimen/_22sdp"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_18sdp"
                         android:background="@android:color/transparent"
                         android:button="@drawable/customtoggle"
                         android:textOff=""
@@ -101,13 +101,13 @@
 
                     <ToggleButton
                         android:id="@+id/toggle_chinese"
-                        android:layout_width="@dimen/_35sdp"
-                        android:layout_height="@dimen/_20sdp"
+                        android:layout_width="@dimen/_43sdp"
+                        android:layout_height="@dimen/_22sdp"
                         android:button="@drawable/customtoggle"
                         android:textOff=""
                         android:textOn=""
                         android:background="@android:color/transparent"
-                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_18sdp"
                         android:layout_alignParentEnd="true"/>
 
                 </RelativeLayout>

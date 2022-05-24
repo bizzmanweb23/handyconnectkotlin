@@ -15,6 +15,7 @@ import nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout
 import nl.psdcompany.duonavigationdrawer.widgets.DuoDrawerToggle
 
 class HomeActivity : AppCompatActivity() {
+
     private var mDuoDrawerLayout : DuoDrawerLayout?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,8 +64,6 @@ class HomeActivity : AppCompatActivity() {
                 }
                 return true
             }
-
-
         })
     }
 
@@ -81,46 +80,50 @@ class HomeActivity : AppCompatActivity() {
         drawer.imgCross.setOnClickListener {
             drawer.closeDrawer()
         }
+
         drawer.sec_engageNow.setOnClickListener {
             startActivity(Intent(this,MainActivity::class.java))
             finish()
         }
+
         drawer.sec_profile.setOnClickListener {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, ProfileFragment())
                 .commit()
             drawer.closeDrawer()
         }
+
         drawer.sec_newsFeed.setOnClickListener {
             startActivity(Intent(this,FeedActivity::class.java))
-
         }
+
         drawer.sec_notification.setOnClickListener {
-            startActivity(Intent(this,NotificationActivity::class.java))
-
+            startActivity(Intent(this, NotificationActivity::class.java))
         }
+
         drawer.sec_referalSystem.setOnClickListener {
-          //  startActivity(Intent(this,ReferalSystemActivity::class.java))
-
+            startActivity(Intent(this,ReferalSystemActivity::class.java))
         }
+
         drawer.sec_payment.setOnClickListener {
-
+            startActivity(Intent(this,PaymentActivity::class.java))
         }
+
         drawer.sec_liveChat.setOnClickListener {
-
+           startActivity(Intent(this,LiveChatActivity::class.java))
         }
+
         drawer.sec_transaction.setOnClickListener {
-
+            startActivity(Intent(this,TransactionActivity::class.java))
         }
+
     }
 
     private fun handleDrawer() {
-        val duoDrawerToggle = DuoDrawerToggle(
-            this,
+        val duoDrawerToggle = DuoDrawerToggle(this,
             mDuoDrawerLayout, null,
             R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close
-        )
+            R.string.navigation_drawer_close )
 
         mDuoDrawerLayout!!.setDrawerListener(duoDrawerToggle)
         duoDrawerToggle.syncState()

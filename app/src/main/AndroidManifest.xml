@@ -12,6 +12,24 @@
         android:theme="@style/Theme.HandyConnect"
         tools:replace="allowBackup">
         <activity
+            android:name=".activities.optimizedView.ShowServiceDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.optimizedView.AllServicesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.optimizedView.TransactionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.optimizedView.LiveChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.optimizedView.PaymentSubmitActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.optimizedView.PaymentActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.optimizedView.ReferalSystemActivity"
             android:exported="false" />
         <activity

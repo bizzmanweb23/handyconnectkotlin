@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_12sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/tvSpending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/_9sdp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_5sdp"
+        android:textColor="@color/white"
+        android:background="@drawable/round_back_two"
+        android:text="@string/spending"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/tvSpending"
+        android:background="@color/light_brown_three"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingVertical="@dimen/_18sdp"
+        app:layout_constraintTop_toTopOf="@+id/tvSpending">
+
+
+        <TextView
+            style="@style/tvRegular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            android:layout_gravity="center"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:text="@string/to_get_a_client_from_the_community"/>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/tvBold"
+        android:textColor="@color/brown"
+        android:textSize="@dimen/_10sdp"
+        android:layout_gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/tvSpending"
+        app:layout_constraintEnd_toEndOf="@+id/tvSpending"
+        app:layout_constraintTop_toBottomOf="@+id/tvSpending"
+        android:layout_marginVertical="@dimen/_12sdp"
+        android:text="20 Points"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

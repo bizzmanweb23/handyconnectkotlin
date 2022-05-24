@@ -93,4 +93,45 @@
     <string name="all_notifications">All Notifications</string>
     <string name="you_recived_a_payment_of_860_00_from_yogie_ismanda">You recived a payment of <font color="#00B2FF">$860.00 </font>from <b>Yogie Ismanda</b></string>
     <string name="you_have_250_point">You have 250 Point</string>
+    <string name="refer">Refer</string>
+    <string name="points">Points</string>
+    <string name="refer_5_people_to_get">Refer 5 people to get</string>
+    <string name="_1_100_of_your_money_back_to_your_account">1. 100% of your money back to your account.</string>
+    <string name="point_two">2. Clients from our elite community, after 5 more referrals.</string>
+    <string name="learnmore_info">Learn more about getting successful using Handy Connect app</string>
+    <string name="share_refer_earn_now"><![CDATA[Share, refer & earn now!]]></string>
+    <string name="spend">Spend</string>
+    <string name="for_handy_connect_members">For Handy Connect Members</string>
+    <string name="spending">Spending</string>
+    <string name="to_get_a_client_from_the_community">To get a client from the community.</string>
+    <string name="payment_gateway">Payment Gateway</string>
+    <string name="total_amount_to_be_paid">Total amount to be paid</string>
+    <string name="payment_option">Payment Option</string>
+    <string name="pay_now">Pay now</string>
+    <string name="bank_transfer">Bank Transfer</string>
+    <string name="cash_payment">Cash Payment</string>
+    <string name="bhim_upi">BHIM UPI</string>
+    <string name="enter_your_vpa">ENTER your <font color="#B49F64">VIRTUAL PAYMENT ADDRESS (VPA)</font></string>
+    <string name="payment_requested">Payment Requested!</string>
+    <string name="paying_to">Paying to</string>
+    <string name="national_relief_found">National Relief Found</string>
+    <string name="accept_payment">Accept the payment request on your bank app and enter your bank MPIN</string>
+    <string name="uploading_of_payment_receipt">Uploading of payment receipt</string>
+    <string name="sort_by_date">Sort by <font color="#B49F64">Date</font></string>
+    <string name="just_now">Just now</string>
+    <string name="all_services">All Services</string>
+    <string name="search_for_service_provider">Search for Service Provider</string>
+    <string name="cap_painting">PAINTING</string>
+    <string name="cap_doorrepair">DOOR REPAIR</string>
+    <string name="cap_electrical">ELECTRICAL</string>
+    <string name="cap_waterheater">WATER HEATER</string>
+    <string name="cap_carpentry">CARPENTRY</string>
+    <string name="cap_grabars">GRAB BARS</string>
+    <string name="cap_disinfrction_sanitation">DISINFECTION/SANITATION</string>
+    <string name="cap_tv_bracket_install">TV BRACKET INSTALLATION</string>
+    <string name="cap_locksmith">LOCKSMITH</string>
+    <string name="cap_furniture_assembly">FURNITURE ASSEMBLY</string>
+    <string name="cap_drilling">DRILLING</string>
+    <string name="cap_plumbing">PLUMBING</string>
+    <string name="cap_wall_mounting">WALL MOUNTING SERVICES</string>
 </resources>

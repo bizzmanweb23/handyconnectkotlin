@@ -10,12 +10,13 @@ import com.example.handyconnect.R
 import com.example.handyconnect.activities.InfoActivity
 import com.example.handyconnect.activities.MainActivity
 import com.example.handyconnect.activities.RegisterActivity
+import com.example.handyconnect.activities.optimizedView.AllServicesActivity
 import com.example.handyconnect.activities.optimizedView.HomeActivity
+import com.example.handyconnect.activities.optimizedView.ShowServiceDataActivity
 import com.example.handyconnect.adapters.HomeViewPagerAdapter
 import com.example.handyconnect.adapters.OurWorksAdapter
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.fragment_home.*
-
 
 class HomeFragment : Fragment() {
     private var adapter : HomeViewPagerAdapter ?= null
@@ -40,7 +41,8 @@ class HomeFragment : Fragment() {
 
     private fun clicks() {
         butSeeAll.setOnClickListener {
-            startActivity(Intent(requireContext(),MainActivity::class.java))
+            startActivity(Intent(requireContext(),AllServicesActivity::class.java))
+
         }
         paintingSec.setOnClickListener {
             if(MainActivity.isRegister){

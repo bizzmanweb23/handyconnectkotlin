@@ -11,18 +11,37 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:paddingHorizontal="@dimen/_10sdp"
-        android:paddingVertical="@dimen/_20sdp">
+        android:paddingVertical="@dimen/_12sdp">
 
         <ImageView
+            android:id="@+id/crossImage"
             android:layout_width="@dimen/_24sdp"
             android:layout_height="@dimen/_24sdp"
-            android:src="@drawable/multiply"/>
+            android:src="@drawable/multiply" />
+
+        <TextView
+            android:id="@+id/butBack"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/round_back"
+            android:backgroundTint="@color/light_gray_two"
+            android:fontFamily="@font/semibold"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_3sdp"
+            android:text="@string/back"
+            android:textColor="@color/dark_gray_two"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </RelativeLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_100sdp"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_90sdp"
         app:civ_border_color="@color/brown"
         app:civ_border_width="@dimen/_3sdp"
         android:layout_gravity="center_horizontal"
@@ -30,15 +49,62 @@
 
      <TextView
         style="@style/tvRegular"
-         android:layout_marginVertical="@dimen/_20sdp"
+         android:layout_marginVertical="@dimen/_12sdp"
          android:layout_gravity="center_horizontal"
-         android:textSize="@dimen/_12sdp"
+         android:textSize="@dimen/_11sdp"
          android:textColor="@color/brown"
          android:paddingHorizontal="@dimen/_45sdp"
          android:paddingVertical="@dimen/_10sdp"
          android:background="@drawable/et_bakground"
          android:text="@string/you_have_250_point"/>
 
+
+    <RelativeLayout
+        android:id="@+id/tabsSec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_15sdp">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:background="@color/white"
+            app:tabIndicatorFullWidth="true"
+            app:tabIndicatorHeight="@dimen/_2sdp"
+            app:tabSelectedTextColor="@color/brown"
+            app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+            app:tabTextColor="@color/tab_heading">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/refer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/refer" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/pastAppointment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/points" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <FrameLayout
+            android:id="@+id/fragContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
 
 
 </LinearLayout>

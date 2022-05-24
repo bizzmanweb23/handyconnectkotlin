@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/_8sdp"
+    android:id="@+id/mainView"
+    android:paddingHorizontal="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_12sdp"
+    android:background="@color/brown">
+
+    <ImageView
+        android:id="@+id/imagePaint"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/paint_roller"/>
+
+    <TextView
+        android:id="@+id/tvHeading"
+        style="@style/tvSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_toEndOf="@+id/imagePaint"
+        android:text="PAINTING"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp" />
+
+    <ImageView
+        android:id="@+id/arrowForward"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_alignParentEnd="true"
+        android:rotation="-90"
+        android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+        app:tint="@color/white" />
+
+
+</RelativeLayout>

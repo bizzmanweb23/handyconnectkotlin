@@ -179,7 +179,7 @@
               android:textSize="@dimen/_11sdp"
               android:layout_gravity="center"
               android:gravity="center"
-              android:padding="@dimen/_10sdp"
+              android:padding="@dimen/_12sdp"
               android:layout_marginVertical="@dimen/_15sdp"
               android:background="@drawable/round_back"
               android:text="@string/see_all"/>

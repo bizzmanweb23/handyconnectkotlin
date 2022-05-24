@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.handyconnect.R
 import com.example.handyconnect.activities.optimizedView.ViewAppointmentActivity
+import com.example.handyconnect.openDatePicker
 import kotlinx.android.synthetic.main.items_book_appointment.view.*
 
 class BookAppointmentAdapter(var context : Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -27,7 +28,13 @@ class BookAppointmentAdapter(var context : Context) : RecyclerView.Adapter<Recyc
         holder.itemView.butBook.setOnClickListener {
             context.startActivity(Intent(context,ViewAppointmentActivity::class.java))
         }
+
+        holder.itemView.tvCalender.setOnClickListener {
+            openDatePicker(context,holder.itemView.tvCalender)
+        }
+
     }
 
     override fun getItemCount() = 6
+
 }

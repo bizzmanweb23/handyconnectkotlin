@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginHorizontal="@dimen/_12sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:cardCornerRadius="@dimen/_2sdp"
+            app:cardUseCompatPadding="true"
+            app:cardPreventCornerOverlap="true"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            app:cardElevation="@dimen/_5sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/tvSemiBold"
+                    android:textColor="@color/brown"
+                    android:textSize="@dimen/_15sdp"
+                    android:text="120"/>
+
+                <TextView
+                    style="@style/tvSemiBold"
+                    android:textColor="@color/brown"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_13sdp"
+                    android:text="@string/points"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/butRegister"
+            style="@style/customButton"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:textSize="@dimen/_13sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/_12sdp"
+            android:layout_marginVertical="@dimen/_15sdp"
+            android:background="@drawable/round_back"
+            android:text="@string/spend"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_12sdp"
+            android:backgroundTint="@color/light_brown_two"
+            android:background="@drawable/rectangular_back"
+            android:paddingVertical="@dimen/_18sdp"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/tvSemiBold"
+                android:textColor="@color/brown"
+                android:textSize="@dimen/_12sdp"
+                android:layout_gravity="center"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="@string/for_handy_connect_members"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclePoints"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                tools:listitem="@layout/items_points"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+       <RelativeLayout
+        android:id="@+id/toolbarSec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingTop="@dimen/_20sdp"
+        android:paddingBottom="@dimen/_15sdp">
+
+
+        <ImageView
+            android:id="@+id/imageMobile"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_110sdp"
+            android:background="@drawable/ellipse27"
+            android:padding="@dimen/_10sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/payment_processed"/>
+
+        <TextView
+            style="@style/tvRegular"
+            android:layout_marginVertical="@dimen/_12sdp"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/brown"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/imageMobile"
+            android:paddingHorizontal="@dimen/_45sdp"
+            android:paddingVertical="@dimen/_5sdp"
+            android:text="@string/payment_requested"/>
+
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_12sdp"
+            android:backgroundTint="@color/light_brown_two"
+            android:background="@drawable/rectangular_back"
+            android:paddingVertical="@dimen/_18sdp"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageCircle"
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="@dimen/_75sdp"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/brown"
+                android:background="@drawable/white_circular_back_two"/>
+
+            <TextView
+                style="@style/tvBold"
+                android:layout_alignStart="@+id/imageCircle"
+                android:layout_alignTop="@+id/imageCircle"
+                android:layout_alignEnd="@+id/imageCircle"
+                android:layout_alignBottom="@+id/imageCircle"
+                android:gravity="center"
+                android:text="$ 120"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp" />
+
+            <TextView
+                android:id="@+id/tvPayingTo"
+                style="@style/tvRegular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/imageCircle"
+                android:text="@string/paying_to"/>
+
+            <TextView
+                style="@style/tvSemiBold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"
+                android:layout_marginVertical="@dimen/_8sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tvPayingTo"
+                android:text="@string/national_relief_found"/>
+
+        </RelativeLayout>
+
+        <TextView
+            style="@style/tvSemiBold"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_11sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginVertical="@dimen/_8sdp"
+            android:text="@string/accept_payment"/>
+
+
+        <TextView
+            android:id="@+id/butRegister"
+            style="@style/customButton"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:textSize="@dimen/_13sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/_11sdp"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:background="@drawable/round_back"
+            android:text="@string/uploading_of_payment_receipt"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

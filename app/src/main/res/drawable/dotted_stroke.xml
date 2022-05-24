@@ -5,10 +5,10 @@
     <solid android:color="@color/light_gray"/>
 
     <stroke android:color="@color/brown"
-        android:dashGap="@dimen/_10sdp"
-        android:dashWidth="@dimen/_10sdp"
+        android:dashGap="@dimen/_5sdp"
+        android:dashWidth="@dimen/_5sdp"
         android:width="@dimen/_1sdp"/>
 
-    <corners android:radius="@dimen/_10sdp"/>
+    <corners android:radius="@dimen/_8sdp"/>
 
 </shape>

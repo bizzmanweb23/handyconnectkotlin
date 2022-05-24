@@ -233,18 +233,18 @@
             android:background="@drawable/rectangular_back">
 
             <LinearLayout
-                android:paddingHorizontal="@dimen/_12sdp"
                 android:id="@+id/dateSec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:orientation="horizontal"
-                android:layout_alignParentEnd="true">
+                android:paddingHorizontal="@dimen/_12sdp">
 
                 <TextView
                     android:id="@+id/tvCalender"
                     style="@style/tvSemiBold"
-                    android:layout_height="wrap_content"
                     android:layout_width="@dimen/_150sdp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:drawableStart="@drawable/planner"
                     android:drawablePadding="@dimen/_5sdp"
@@ -254,12 +254,12 @@
 
                 <TextView
                     style="@style/tvSemiBold"
-                    android:layout_height="wrap_content"
                     android:layout_width="@dimen/_150sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:drawableStart="@drawable/time"
                     android:drawablePadding="@dimen/_5sdp"
                     android:text="09:00 am to 12:00 pm"
-                    android:layout_marginTop="@dimen/_5sdp"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_9sdp" />
 

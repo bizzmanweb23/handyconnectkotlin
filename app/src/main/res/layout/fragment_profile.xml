@@ -17,10 +17,10 @@
             android:id="@+id/profileImg"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_100sdp"
-            app:civ_border_color="@color/white"
-            app:civ_border_width="@dimen/_12sdp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/profile_img"/>
+            android:src="@drawable/profile_img"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/_8sdp" />
 
         <ImageView
             android:id="@+id/editImage"

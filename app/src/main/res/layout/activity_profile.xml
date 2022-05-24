@@ -39,7 +39,7 @@
             android:layout_centerHorizontal="true"
             android:src="@drawable/profile_img"
             app:civ_border_color="@color/white"
-            app:civ_border_width="@dimen/_12sdp" />
+            app:civ_border_width="@dimen/_8sdp" />
 
         <TextView
             style="@style/tvSemiBold"

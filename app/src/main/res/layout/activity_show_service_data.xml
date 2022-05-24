@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/heading_sec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/toolbarSec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_26sdp">
+
+            <TextView
+                android:id="@+id/butBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/round_back"
+                android:backgroundTint="@color/light_gray_two"
+                android:fontFamily="@font/semibold"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_3sdp"
+                android:text="@string/back"
+                android:textColor="@color/dark_gray_two"
+                android:textSize="@dimen/_8sdp" />
+
+            <ImageView
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:src="@drawable/logotwo" />
+
+        </RelativeLayout>
+
+        <View
+            android:background="@color/brown"
+            android:layout_height="@dimen/_6sdp"
+            android:layout_above="@+id/tvHeading"
+            android:layout_width="match_parent"/>
+
+        <RelativeLayout
+            android:id="@+id/tvHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbarSec"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/brown"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_12sdp">
+
+            <TextView
+                android:id="@+id/tvServiceName"
+                style="@style/tvSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="@string/all_services"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_alignParentEnd="true"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_alignBottom="@+id/tvHeading"
+            android:src="@drawable/manimage"/>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleServiceInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/butContinue"
+        android:layout_below="@+id/heading_sec"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginVertical="@dimen/_20sdp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/items_show_service" />
+
+    <TextView
+        android:id="@+id/butContinue"
+        style="@style/customButton"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/round_back"
+        android:gravity="center"
+        android:text="@string/continue_text"
+        android:textAllCaps="true"
+        android:textSize="@dimen/_13sdp" />
+
+</RelativeLayout>

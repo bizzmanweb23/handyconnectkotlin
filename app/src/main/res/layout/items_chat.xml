@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="@dimen/_12sdp">
+
+    <RelativeLayout
+        android:id="@+id/firstSec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_50sdp"
+        android:background="@drawable/rect_border">
+
+    <ImageView
+        android:id="@+id/homeImage"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:src="@drawable/homewithcircle"/>
+
+        <TextView
+            android:id="@+id/tvChat"
+            style="@style/tvRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toEndOf="@+id/homeImage"
+            android:text="@string/dummy_content_two"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/homeImage"
+        android:text="12:35 AM"
+        android:textSize="@dimen/_8sdp"
+        android:layout_below="@+id/tvChat"
+        android:textColor="@color/black"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        style="@style/tvSemiBold"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/secondSec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_50sdp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_below="@+id/firstSec"
+        android:background="@drawable/rect_border">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/homeImageTwo"
+            app:civ_border_width="@dimen/_1sdp"
+            app:civ_border_color="@color/brown"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/profile_img"/>
+
+        <TextView
+            android:id="@+id/tvChatTwo"
+            style="@style/tvRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toEndOf="@+id/homeImageTwo"
+            android:text="@string/dummy_content_two"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/homeImageTwo"
+            android:text="12:35 AM"
+            android:textSize="@dimen/_8sdp"
+            android:layout_below="@+id/tvChatTwo"
+            android:textColor="@color/black"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            style="@style/tvSemiBold"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

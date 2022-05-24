@@ -39,6 +39,10 @@ class InfoActivity : AppCompatActivity() {
             }
         }
 
+        butBack.setOnClickListener {
+            onBackPressed()
+        }
+
         butSubmit.setOnClickListener {
             startActivity(Intent(this, RequestReceivedActivity::class.java)
                 .putExtra("call_From",callFrom))
