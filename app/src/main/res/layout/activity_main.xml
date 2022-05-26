@@ -55,10 +55,10 @@
         <ImageView
             android:id="@+id/imgMan"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_100sdp"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/_12sdp"
-            android:src="@drawable/manimage"/>
+            android:src="@drawable/manimage" />
 
         <View
             android:layout_width="match_parent"

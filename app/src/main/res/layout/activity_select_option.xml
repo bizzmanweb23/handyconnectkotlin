@@ -14,15 +14,15 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="@dimen/_90sdp"
-            android:layout_height="@dimen/_90sdp"
+            android:layout_width="@dimen/_85sdp"
+            android:layout_height="@dimen/_85sdp"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/_60sdp"
             android:src="@drawable/logo" />
 
         <ImageView
-            android:layout_width="@dimen/_180sdp"
-            android:layout_height="@dimen/_45sdp"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_gravity="center"
             android:src="@drawable/logotwo" />
 
@@ -56,7 +56,6 @@
             android:gravity="center"
             android:background="@drawable/round_back"
             android:text="@string/explore_more"/>
-
 
     </LinearLayout>
 

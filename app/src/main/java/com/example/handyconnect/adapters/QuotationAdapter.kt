@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.handyconnect.R
+import com.example.handyconnect.activities.optimizedView.ViewAppointmentActivity
+import kotlinx.android.synthetic.main.items_quotation.view.*
 
 class QuotationAdapter(var context : Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -18,6 +20,9 @@ class QuotationAdapter(var context : Context) : RecyclerView.Adapter<RecyclerVie
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        holder.itemView.butAccept.setOnClickListener {
+            context.startActivity(Intent(context, ViewAppointmentActivity::class.java))
+        }
 
     }
 

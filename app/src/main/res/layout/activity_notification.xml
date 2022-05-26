@@ -27,6 +27,7 @@
             android:textSize="@dimen/_8sdp" />
 
         <ImageView
+            android:id="@+id/homeImage"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_alignParentEnd="true"

@@ -23,7 +23,6 @@ class IntroActivity : AppCompatActivity() {
         list.add(IntroscreenModel("Title1",getString(R.string.dummy_content_two),R.drawable.loginbanner))
         list.add(IntroscreenModel("Title1",getString(R.string.dummy_content_two),R.drawable.loginbanner))
 
-
         setViewPagerAdapter()
         clicks()
     }
@@ -40,9 +39,8 @@ class IntroActivity : AppCompatActivity() {
                 // move to next screen
                 viewPager.currentItem = current
             }
-            else{
+            else {
                 startActivity(Intent(this,SelectLanguageActivity::class.java))
-
             }
         }
     }

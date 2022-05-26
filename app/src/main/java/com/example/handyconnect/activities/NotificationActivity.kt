@@ -1,8 +1,10 @@
 package com.example.handyconnect.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.handyconnect.R
+import com.example.handyconnect.activities.optimizedView.HomeActivity
 import com.example.handyconnect.adapters.NotificationAdapter
 import kotlinx.android.synthetic.main.activity_notification.*
 
@@ -20,6 +22,10 @@ class NotificationActivity : AppCompatActivity() {
     private fun clicks() {
         butBack.setOnClickListener {
             onBackPressed()
+        }
+        homeImage.setOnClickListener {
+            startActivity(Intent(this,HomeActivity::class.java))
+            finish()
         }
     }
 

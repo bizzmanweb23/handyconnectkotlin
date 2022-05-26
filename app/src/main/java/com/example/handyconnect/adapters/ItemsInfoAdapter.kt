@@ -10,7 +10,9 @@ import com.example.handyconnect.R
 import kotlinx.android.synthetic.main.items_info.view.*
 
 class ItemsInfoAdapter(var context : Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-     var isSelected = true
+
+    var isSelected = true
+
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -36,4 +38,5 @@ class ItemsInfoAdapter(var context : Context) : RecyclerView.Adapter<RecyclerVie
     }
 
     override fun getItemCount() = 6
+
 }

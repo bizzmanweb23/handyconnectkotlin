@@ -67,8 +67,8 @@
             android:text="@string/we_will_be_in_touch_with_you_as_soon_as_we_can"/>
 
         <ImageView
-            android:layout_width="@dimen/_85sdp"
-            android:layout_height="@dimen/_85sdp"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
             android:layout_gravity="center"
             android:layout_marginVertical="@dimen/_25sdp"
             android:src="@drawable/checkedbox"/>
@@ -78,7 +78,6 @@
             android:layout_height="@dimen/_3sdp"
             android:layout_marginVertical="@dimen/_20sdp"
             android:background="@color/white"/>
-
 
     </LinearLayout>
 

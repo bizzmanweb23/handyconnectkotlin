@@ -384,7 +384,7 @@
                             android:scaleType="fitXY"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/building"/>
+                            android:src="@drawable/door_component"/>
 
                     </androidx.cardview.widget.CardView>
 
@@ -415,7 +415,7 @@
                             android:scaleType="fitXY"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/building"/>
+                            android:src="@drawable/door_component_one"/>
 
                     </androidx.cardview.widget.CardView>
 

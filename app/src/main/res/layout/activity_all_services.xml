@@ -23,6 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_centerVertical="true"
             android:background="@drawable/round_back"
             android:backgroundTint="@color/light_gray_two"
             android:fontFamily="@font/semibold"
@@ -36,8 +37,7 @@
         <ImageView
             android:layout_width="@dimen/_145sdp"
             android:layout_height="@dimen/_35sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentEnd="true"
             android:src="@drawable/logotwo" />
 
     </RelativeLayout>
@@ -64,12 +64,12 @@
 
     </RelativeLayout>
 
-    <ImageView
-        android:layout_alignParentEnd="true"
-        android:layout_width="@dimen/_60sdp"
-        android:layout_height="@dimen/_70sdp"
-        android:layout_alignBottom="@+id/tvHeading"
-        android:src="@drawable/manimage"/>
+      <ImageView
+          android:layout_width="@dimen/_60sdp"
+          android:layout_height="@dimen/_70sdp"
+          android:layout_alignBottom="@+id/tvHeading"
+          android:layout_alignParentEnd="true"
+          android:src="@drawable/manimage" />
 
   </RelativeLayout>
 
@@ -91,7 +91,6 @@
             style="@style/customEditText"/>
 
     </RelativeLayout>
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleAllServices"

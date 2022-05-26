@@ -14,6 +14,13 @@ class TransactionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_transaction)
 
         setAdapter()
+        clicks()
+    }
+
+    private fun clicks() {
+        butBack.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     private fun setAdapter() {

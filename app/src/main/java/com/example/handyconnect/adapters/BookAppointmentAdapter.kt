@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.handyconnect.R
-import com.example.handyconnect.activities.optimizedView.ViewAppointmentActivity
+import com.example.handyconnect.activities.InfoActivity
 import com.example.handyconnect.openDatePicker
 import kotlinx.android.synthetic.main.items_book_appointment.view.*
 
@@ -26,7 +26,9 @@ class BookAppointmentAdapter(var context : Context) : RecyclerView.Adapter<Recyc
         holder.itemView.recycleItems.adapter = adapter
 
         holder.itemView.butBook.setOnClickListener {
-            context.startActivity(Intent(context,ViewAppointmentActivity::class.java))
+
+            context.startActivity(Intent(context, InfoActivity::class.java)
+                .putExtra("callFrom","callFromHome"))
         }
 
         holder.itemView.tvCalender.setOnClickListener {

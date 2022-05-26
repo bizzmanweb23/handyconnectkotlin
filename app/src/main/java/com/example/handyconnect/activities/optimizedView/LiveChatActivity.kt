@@ -27,4 +27,5 @@ class LiveChatActivity : AppCompatActivity() {
         adapter = LiveChatAdapter(this)
         recycleChat.adapter = adapter
     }
+
 }

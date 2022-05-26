@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         clicks()
+
     }
 
     private fun clicks() {
@@ -115,8 +116,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         butBack.setOnClickListener {
-            onBackPressed()
-
+            startActivity(Intent(this,SelectOptionActivity::class.java))
+            finish()
         }
     }
 
@@ -127,9 +128,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun callRegisterActivity() {
         startActivity(Intent(this, RegisterActivity::class.java))
-
     }
-    companion object{
+
+    companion object {
         var isRegister = false
     }
 }

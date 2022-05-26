@@ -19,11 +19,13 @@ class RequestReceivedActivity : AppCompatActivity() {
                     startActivity(Intent(this@RequestReceivedActivity, HomeActivity::class.java))
                     finish()
                 }
-                else{
+                else
+                {
                     startActivity(Intent(this@RequestReceivedActivity, MainActivity::class.java))
                     finish()
                 }
             }
         },5000)
+
     }
 }

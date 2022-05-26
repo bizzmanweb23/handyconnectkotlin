@@ -16,11 +16,13 @@ import nl.psdcompany.duonavigationdrawer.widgets.DuoDrawerToggle
 
 class HomeActivity : AppCompatActivity() {
 
-    private var mDuoDrawerLayout : DuoDrawerLayout?= null
+    private var mDuoDrawerLayout : DuoDrawerLayout ?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_home)
+
         mDuoDrawerLayout = DuoDrawerLayout(this)
 
         handleDrawer()
@@ -30,6 +32,7 @@ class HomeActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, HomeFragment())
             .commit()
+
     }
 
     private fun inflateFragments() {
@@ -123,9 +126,10 @@ class HomeActivity : AppCompatActivity() {
         val duoDrawerToggle = DuoDrawerToggle(this,
             mDuoDrawerLayout, null,
             R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close )
+            R.string.navigation_drawer_close)
 
         mDuoDrawerLayout!!.setDrawerListener(duoDrawerToggle)
         duoDrawerToggle.syncState()
+
     }
 }

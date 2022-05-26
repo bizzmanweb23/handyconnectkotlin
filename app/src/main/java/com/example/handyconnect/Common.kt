@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import java.text.SimpleDateFormat
 import java.util.*
 
-val myCalendar: Calendar = Calendar.getInstance()
+val myCalendar : Calendar = Calendar.getInstance()
 
 fun changeStrokeColor(context : Context, view : View, color : Int){
     val drawable = view.background as GradientDrawable
@@ -19,17 +19,17 @@ fun changeStrokeColor(context : Context, view : View, color : Int){
 fun openDatePicker(context: Context, tvCalender: TextView){
     var datePickerDialog = DatePickerDialog(context, { datePicker, year, month, day ->
 
-        updateLabel(tvCalender)
-        
+        myCalendar.set(year,month,day)
+        val myFormat = "dd - MMMM - yyyy"
+        val dateFormat = SimpleDateFormat(myFormat, Locale.US)
+        tvCalender.setText(dateFormat.format(myCalendar.time))
+
     }, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH))
+
     datePickerDialog.show()
+
 }
 
-fun updateLabel(tvCalender: TextView) {
-    val myFormat = "dd - MMMM - yyyy"
-    val dateFormat = SimpleDateFormat(myFormat, Locale.US)
-    tvCalender.setText(dateFormat.format(myCalendar.time))
-}
 
 
 

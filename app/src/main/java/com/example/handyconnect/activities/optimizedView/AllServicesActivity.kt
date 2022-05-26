@@ -14,6 +14,7 @@ class AllServicesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_all_services)
 
         list.clear()
@@ -33,6 +34,7 @@ class AllServicesActivity : AppCompatActivity() {
 
         setAdapter()
         clicks()
+
     }
 
     private fun clicks() {

@@ -7,34 +7,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/brown">
 
-    <LinearLayout
-        android:id="@+id/toolbarSec"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingVertical="@dimen/_30sdp"
-        android:paddingHorizontal="@dimen/_12sdp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_gravity="end"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:paddingHorizontal="@dimen/_12sdp">
 
         <TextView
-            style="@style/tvSemiBold"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_12sdp"
-            android:layout_marginEnd="@dimen/_8sdp"
-            android:text="Jeo Deo"/>
+            android:id="@+id/butBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_back"
+            android:backgroundTint="@color/light_gray_two"
+            android:fontFamily="@font/semibold"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_3sdp"
+            android:text="@string/back"
+            android:textColor="@color/dark_gray_two"
+            android:textSize="@dimen/_8sdp" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            app:civ_border_color="@color/white"
-            app:civ_border_width="@dimen/_2sdp"
-            android:src="@drawable/profile_img"/>
+        <LinearLayout
+            android:id="@+id/toolbarSec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <TextView
+                style="@style/tvSemiBold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:text="Jeo Deo"/>
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="@dimen/_2sdp"
+                android:src="@drawable/profile_img"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

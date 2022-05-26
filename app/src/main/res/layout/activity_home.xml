@@ -21,7 +21,6 @@
         android:layout_height="match_parent"
         android:tag="@string/tag_content">
 
-
         <RelativeLayout
             android:id="@+id/toolbarSec"
             android:layout_width="match_parent"
@@ -77,7 +76,5 @@
         </RelativeLayout>
 
     </RelativeLayout>
-
-
 
 </nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout>
