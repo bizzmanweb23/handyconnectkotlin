@@ -82,10 +82,11 @@
                     android:src="@drawable/email"/>
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etEmail"
                     style="@style/customEditText"
                     android:inputType="textEmailAddress"
                     android:background="@null"
-                    android:text="@string/email"/>
+                    android:hint="@string/email"/>
 
             </LinearLayout>
 
@@ -105,6 +106,7 @@
                     android:src="@drawable/lock"/>
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etPassword"
                     style="@style/customEditText"
                     android:inputType="textEmailAddress"
                     android:background="@null"

@@ -85,10 +85,11 @@
                     android:src="@drawable/name"/>
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etName"
                     style="@style/customEditText"
                     android:inputType="text"
                     android:background="@null"
-                    android:text="@string/name"/>
+                    android:hint="@string/name"/>
 
             </LinearLayout>
 
@@ -108,10 +109,11 @@
                     android:src="@drawable/email"/>
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etEmail"
                     style="@style/customEditText"
                     android:inputType="textEmailAddress"
                     android:background="@null"
-                    android:text="@string/email"/>
+                    android:hint="@string/email"/>
 
             </LinearLayout>
 
@@ -131,10 +133,12 @@
                     android:src="@drawable/phone"/>
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etPhone"
                     style="@style/customEditText"
+                    android:maxLength="10"
                     android:inputType="textEmailAddress"
                     android:background="@null"
-                    android:text="@string/phone_number"/>
+                    android:hint="@string/phone_number"/>
 
             </LinearLayout>
 
@@ -148,7 +152,7 @@
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/etPostcode"
+                    android:id="@+id/etLocation"
                     style="@style/customEditText"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -156,7 +160,7 @@
                     android:inputType="textEmailAddress"
                     android:layout_marginEnd="@dimen/_5sdp"
                     android:background="@drawable/brown_stroke"
-                    android:text="@string/postcode"/>
+                    android:hint="@string/postcode"/>
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/etUnitNo"
@@ -167,7 +171,7 @@
                     android:background="@drawable/brown_stroke"
                     android:inputType="textEmailAddress"
                     android:layout_marginStart="@dimen/_5sdp"
-                    android:text="@string/unit_no"/>
+                    android:hint="@string/unit_no"/>
 
             </LinearLayout>
 
@@ -187,10 +191,11 @@
                     android:src="@drawable/password"/>
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etPassword"
                     style="@style/customEditText"
                     android:inputType="textEmailAddress"
                     android:background="@null"
-                    android:text="@string/password"/>
+                    android:hint="@string/password"/>
 
             </LinearLayout>
 
@@ -210,10 +215,11 @@
                     android:src="@drawable/password"/>
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etRePassword"
                     style="@style/customEditText"
                     android:inputType="textEmailAddress"
                     android:background="@null"
-                    android:text="@string/confirm_password"/>
+                    android:hint="@string/confirm_password"/>
 
             </LinearLayout>
 
