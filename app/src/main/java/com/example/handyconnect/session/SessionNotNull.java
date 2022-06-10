@@ -3,6 +3,7 @@ package com.example.handyconnect.session;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.handyconnect.network.responses.register.Data;
 import com.google.gson.Gson;
 
 public class SessionNotNull {
@@ -71,16 +72,16 @@ public class SessionNotNull {
         editorTwo.commit();
     }
 
-//    public void setLoginData(Data data) {
-//          Gson gson = new Gson();
-//          String sData = gson.toJson(data,Data.class);
-//          editor.putString("loginData",sData);
-//          editor.commit();
-//    }
-//
-//    public Data getLoginData(){
-//        return new Gson().fromJson(pref.getString("loginData", ""), Data.class);
-//    }
+    public void setLoginData(Data data) {
+          Gson gson = new Gson();
+          String sData = gson.toJson(data,Data.class);
+          editor.putString("loginData",sData);
+          editor.commit();
+    }
+
+    public Data getLoginData(){
+        return new Gson().fromJson(pref.getString("loginData", ""), Data.class);
+    }
 
 
 //    public String getAfterSignupToken() {

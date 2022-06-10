@@ -1,13 +1,24 @@
 package com.example.handyconnect.network;
 
 
+import com.example.handyconnect.network.responses.appointmentList.AppointmentListResponse;
+import com.example.handyconnect.network.responses.appointmentListNew.AppointmentListResponseNew;
+import com.example.handyconnect.network.responses.categoryServices.CategoryServicesDetailsResponse;
+import com.example.handyconnect.network.responses.imageUpload.ImageUploadResponse;
 import com.example.handyconnect.network.responses.login.LoginSuccessResponse;
 import com.example.handyconnect.network.responses.register.RegisterResponse;
+import com.example.handyconnect.network.responses.simpleviewCategory.SimpleViewCategoryResponse;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
+import retrofit2.http.Query;
 
 
 public interface ApiInterface {
@@ -27,6 +38,23 @@ public interface ApiInterface {
     Call<LoginSuccessResponse> LoginApi(
             @Field("email") String email,
             @Field("password") String password);
+
+
+    @GET("simpleview/category")
+    Call<SimpleViewCategoryResponse> simpleViewCategoryApi();
+
+
+    @GET("simpleview/services/get?")
+    Call<CategoryServicesDetailsResponse> simpleViewCateDetailApi(@Query("cat_id") String cat_id);
+
+    @GET("optimize/get/appointments")
+    Call<AppointmentListResponseNew> appointmentList();
+
+    @Multipart
+    @POST("simpleview/remark/upload/image")
+    Call<ImageUploadResponse> imageUploadApi(
+            @Part MultipartBody.Part remark_upload,
+            @Part("uid") RequestBody uid);
 
 
 

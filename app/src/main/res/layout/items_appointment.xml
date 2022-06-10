@@ -66,6 +66,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_toEndOf="@+id/homeIcon"
             android:text="@string/mandy"
+            android:visibility="gone"
             android:textColor="@color/bottom_text_color"
             android:textSize="@dimen/_11sdp" />
 

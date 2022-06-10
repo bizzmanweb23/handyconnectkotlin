@@ -14,6 +14,7 @@ import com.example.handyconnect.activities.optimizedView.AllServicesActivity
 import com.example.handyconnect.activities.optimizedView.HomeActivity
 import com.example.handyconnect.activities.optimizedView.ShowServiceDataActivity
 import com.example.handyconnect.adapters.HomeViewPagerAdapter
+import com.example.handyconnect.adapters.MainServicesAdapter.Companion.isRegister
 import com.example.handyconnect.adapters.OurWorksAdapter
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -45,7 +46,7 @@ class HomeFragment : Fragment() {
 
         }
         paintingSec.setOnClickListener {
-            if(MainActivity.isRegister){
+            if(isRegister){
                 callInfoActivity()
             }
             else{
@@ -53,7 +54,7 @@ class HomeFragment : Fragment() {
             }
         }
         doorRepairSec.setOnClickListener {
-            if(MainActivity.isRegister){
+            if(isRegister){
                 callInfoActivity()
             }
             else{
@@ -61,7 +62,7 @@ class HomeFragment : Fragment() {
             }
         }
         electricalSec.setOnClickListener {
-            if(MainActivity.isRegister){
+            if(isRegister){
                 callInfoActivity()
             }
             else{
@@ -69,7 +70,7 @@ class HomeFragment : Fragment() {
             }
         }
         plumbingSec.setOnClickListener {
-            if(MainActivity.isRegister){
+            if(isRegister){
                 callInfoActivity()
             }
             else{

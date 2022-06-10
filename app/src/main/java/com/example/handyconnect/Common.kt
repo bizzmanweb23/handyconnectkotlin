@@ -3,9 +3,12 @@ package com.example.handyconnect
 import android.app.DatePickerDialog
 import android.content.Context
 import android.graphics.drawable.GradientDrawable
+import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -28,6 +31,17 @@ fun openDatePicker(context: Context, tvCalender: TextView){
 
     datePickerDialog.show()
 
+}
+
+fun  loadImageCategory(
+    url: String? = "",
+    context: Context, imageView: ImageView
+) {
+    var user = "URL"
+   // var base_url = "http://103.99.202.37:3010/productCategory/"
+    Log.d(user, url.toString())
+    Glide.with(context).asBitmap().load(url).error(R.drawable.ic_userdefault)
+        .placeholder(R.drawable.ic_userdefault).into(imageView)
 }
 
 

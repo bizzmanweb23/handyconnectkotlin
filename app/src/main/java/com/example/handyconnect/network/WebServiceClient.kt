@@ -2,6 +2,7 @@ package com.example.handyconnect.network
 
 import android.content.Context
 import android.util.Log
+import com.example.handyconnect.session.SessionNotNull
 import okhttp3.ConnectionSpec
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -20,10 +21,10 @@ class WebServiceClient(context: Context) {
     var mToken = ""
 
     val client : Retrofit get() {
-//            if (SessionNotNull(mContext).loginData != null) {
-//                mToken = SessionNotNull(mContext).loginData.token
-//                Log.wtf("request_auth_token", mToken)
-//            }
+            if (SessionNotNull(mContext).loginData != null) {
+                mToken = SessionNotNull(mContext).loginData.token
+                Log.wtf("request_auth_token", mToken)
+            }
 
             interceptor = HttpLoggingInterceptor()
             interceptor.level = HttpLoggingInterceptor.Level.BODY

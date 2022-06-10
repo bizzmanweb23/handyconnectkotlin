@@ -1,15 +1,23 @@
 package com.example.handyconnect.activities.optimizedView.fragments
 
+import android.app.AlertDialog
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.provider.MediaStore
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.get
+import androidx.lifecycle.Observer
 import com.example.handyconnect.R
 import com.example.handyconnect.activities.optimizedView.HomeActivity
 import com.example.handyconnect.adapters.AppointmentAdapter
 import com.example.handyconnect.adapters.PastAppointmentAdapter
+import com.example.handyconnect.network.responses.appointmentListNew.AppointmentSubListNew
+import com.example.handyconnect.utils.isNetworkConnected
+import com.example.handyconnect.utils.showToast
+import com.example.handyconnect.viewModel.AppointmentListViewModel
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_appointment.*
 
@@ -17,9 +25,10 @@ class AppointmentFragment : Fragment() {
 
     private var adapter : AppointmentAdapter ?= null
     private var pastAdapter : PastAppointmentAdapter?= null
+    private var appointVM : AppointmentListViewModel ?= null
+    var appointmentList  : ArrayList<AppointmentSubListNew> = ArrayList()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+    override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle? ): View? {
 
         // Inflate the layout for this fragment
@@ -29,11 +38,43 @@ class AppointmentFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        appointmentList.clear()
         (requireContext() as HomeActivity).toolbarSec.visibility = View.GONE
+        appointVM = AppointmentListViewModel()
 
-        setAppointmentAdapter()
+
+        if(requireActivity().isNetworkConnected()){
+            appointVM?.appointmentListMethod(requireContext())
+        }
+        else{
+            showToast(requireContext(),"No internet connection")
+        }
+
+        listeners()
+
+
         setTablayouts()
         clicks()
+    }
+
+    private fun listeners() {
+        appointVM?.appointmentList?.observe(requireActivity(), Observer { user ->
+            if(user != null){
+                if(user.SuccessCode == 200){
+                    if(user.data != null){
+                        appointmentList.addAll(user.data)
+                    }
+                    setAppointmentAdapter()
+
+                }
+                else{
+                    showToast(requireContext(),user.massage)
+                }
+            }
+            else{
+                showToast(requireContext(),"Something went wrong")
+            }
+        })
     }
 
     private fun clicks() {
@@ -76,8 +117,9 @@ class AppointmentFragment : Fragment() {
     }
 
     private fun setAppointmentAdapter() {
-        adapter = AppointmentAdapter(requireContext())
+        adapter = AppointmentAdapter(requireContext(),appointmentList)
         recycleAppointment.adapter = adapter
     }
+
 
 }

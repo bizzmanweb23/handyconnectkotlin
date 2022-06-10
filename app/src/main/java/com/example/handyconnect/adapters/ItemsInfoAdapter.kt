@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.handyconnect.R
+import com.example.handyconnect.network.responses.categoryServices.CategoryDetailData
 import kotlinx.android.synthetic.main.items_info.view.*
 
-class ItemsInfoAdapter(var context : Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ItemsInfoAdapter(var context: Context,val cateDetailList: ArrayList<CategoryDetailData>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var isSelected = true
 
@@ -21,6 +22,11 @@ class ItemsInfoAdapter(var context : Context) : RecyclerView.Adapter<RecyclerVie
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        var data = cateDetailList[position]
+
+        if(data.service_name != null){
+            holder.itemView.tvItem.setText(data.service_name)
+        }
 
         holder.itemView.mainSection.setOnClickListener{
             if(isSelected){
@@ -35,8 +41,10 @@ class ItemsInfoAdapter(var context : Context) : RecyclerView.Adapter<RecyclerVie
             }
         }
 
+
+
     }
 
-    override fun getItemCount() = 6
+    override fun getItemCount() = cateDetailList.size
 
 }

@@ -132,6 +132,7 @@
                         android:layout_height="@dimen/_65sdp">
 
                         <ImageView
+                            android:id="@+id/uploadFirstImage"
                             android:scaleType="fitXY"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"

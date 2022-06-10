@@ -1,15 +1,14 @@
 package com.example.handyconnect.activities
 
 import android.app.Dialog
-import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.os.Handler
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import com.example.handyconnect.R
-import com.example.handyconnect.activities.MainActivity.Companion.isRegister
+import com.example.handyconnect.adapters.MainServicesAdapter.Companion.isRegister
+import com.example.handyconnect.session.SessionNotNull
 import com.example.handyconnect.utils.isEmailValid
 import com.example.handyconnect.utils.isNetworkConnected
 import com.example.handyconnect.utils.showToast
@@ -20,12 +19,14 @@ import java.util.*
 
 class RegisterActivity : AppCompatActivity() {
     private var registerModel : RegisterViewModel ?= null
+    private var loginPref : SessionNotNull ?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
         registerModel = RegisterViewModel()
+        loginPref = SessionNotNull(this)
 
         clicks()
         listeners()
@@ -36,6 +37,8 @@ class RegisterActivity : AppCompatActivity() {
         registerModel?.userRegister?.observe(this, androidx.lifecycle.Observer { user ->
             if(user != null){
                 if(user.SuccessCode == 200) {
+                    loginPref?.loginData = user.Data
+                    loginPref?.isLogin = true
                     showToast(this, user.Message)
                     showOtpVerificationPopup()
                 }

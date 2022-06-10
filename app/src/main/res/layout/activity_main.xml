@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -72,6 +74,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_10sdp"
         android:fillViewport="true">
 
         <LinearLayout
@@ -88,7 +91,7 @@
                 android:text="@string/our_services"/>
 
 
-            <LinearLayout
+          <!--  <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_10sdp"
@@ -388,7 +391,6 @@
 
             </LinearLayout>
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -488,8 +490,19 @@
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </LinearLayout>-->
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleServices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="3"
+                tools:listitem="@layout/items_main_services"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_35sdp"/>
 
 
 

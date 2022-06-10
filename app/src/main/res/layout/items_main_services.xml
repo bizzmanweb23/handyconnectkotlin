@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_76sdp"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_15sdp"
+    android:layout_height="@dimen/_90sdp">
+
+    <LinearLayout
+        android:id="@+id/mainSec"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/_6sdp"
+        android:gravity="center"
+        android:background="@drawable/rect_border"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imagePhoto"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:src="@drawable/airconditioner"/>
+
+        <TextView
+            android:id="@+id/titleMessage"
+            style="@style/tvSemiBold"
+            android:textSize="@dimen/_8sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textColor="@color/heading_color"
+            android:text="@string/air_condition"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
