@@ -134,4 +134,5 @@
     <string name="cap_drilling">DRILLING</string>
     <string name="cap_plumbing">PLUMBING</string>
     <string name="cap_wall_mounting">WALL MOUNTING SERVICES</string>
+    <string name="edit">Edit</string>
 </resources>

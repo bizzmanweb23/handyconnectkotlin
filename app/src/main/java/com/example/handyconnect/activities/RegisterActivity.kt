@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import com.example.handyconnect.R
-import com.example.handyconnect.adapters.MainServicesAdapter.Companion.isRegister
 import com.example.handyconnect.session.SessionNotNull
 import com.example.handyconnect.utils.isEmailValid
 import com.example.handyconnect.utils.isNetworkConnected
@@ -101,7 +100,7 @@ class RegisterActivity : AppCompatActivity() {
         dialog.setContentView(R.layout.otp_verification_popup)
 
         dialog.butOtpSend.setOnClickListener {
-            isRegister = true
+           // isRegister = true
             dialog.dismiss()
             showDialog()
         }

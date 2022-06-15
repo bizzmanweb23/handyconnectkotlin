@@ -13,6 +13,26 @@
         android:paddingVertical="@dimen/_28sdp"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/butEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:background="@drawable/round_back"
+            android:backgroundTint="@color/light_gray_two"
+            android:fontFamily="@font/semibold"
+            android:gravity="center"
+            android:layout_alignParentEnd="true"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_3sdp"
+            android:text="@string/edit"
+            android:textColor="@color/dark_gray_two"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profileImg"
             android:layout_width="@dimen/_100sdp"
@@ -26,13 +46,15 @@
             android:id="@+id/editImage"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:padding="@dimen/_10sdp"
-            android:background="@drawable/white_circular_back_two"
+            android:visibility="invisible"
             android:layout_alignEnd="@+id/profileImg"
-            android:src="@drawable/edit_pencil"
-            android:layout_alignBottom="@+id/profileImg" />
+            android:layout_alignBottom="@+id/profileImg"
+            android:background="@drawable/white_circular_back_two"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/edit_pencil" />
 
         <TextView
+            android:id="@+id/tvName"
             style="@style/tvSemiBold"
             android:layout_below="@+id/editImage"
             android:layout_centerHorizontal="true"
@@ -108,11 +130,12 @@
                                 android:src="@drawable/email" />
 
                             <TextView
+                                android:id="@+id/tvEmail"
                                 style="@style/tvRegular"
                                 android:layout_gravity="center"
                                 android:layout_marginHorizontal="@dimen/_8sdp"
                                 android:background="@null"
-                                android:text="jeo.deo@gmail.com"
+                                android:hint="Email"
                                 android:textColor="@color/tab_heading_two"
                                 android:textColorHint="@color/tab_heading_two" />
 
@@ -136,11 +159,12 @@
                                 android:src="@drawable/phone" />
 
                             <TextView
+                                android:id="@+id/tvMobile"
                                 style="@style/tvRegular"
                                 android:layout_gravity="center"
                                 android:layout_marginHorizontal="@dimen/_8sdp"
                                 android:background="@null"
-                                android:text="+65 1234567890"
+                                android:hint="Mobile"
                                 android:textColor="@color/tab_heading_two"
                                 android:textColorHint="@color/tab_heading_two" />
 
@@ -163,14 +187,14 @@
                                 android:src="@drawable/location" />
 
                             <TextView
+                                android:id="@+id/tvLocation"
                                 style="@style/tvRegular"
                                 android:layout_gravity="center"
                                 android:layout_marginHorizontal="@dimen/_8sdp"
                                 android:background="@null"
-                                android:text="D/65 om Nagar New delhi 110044"
+                                android:hint="Location"
                                 android:textColor="@color/tab_heading_two"
                                 android:textColorHint="@color/tab_heading_two" />
-
 
                         </LinearLayout>
 
@@ -202,14 +226,14 @@
                                 android:src="@drawable/location" />
 
                             <TextView
+                                android:id="@+id/tvServiceLocation"
                                 style="@style/tvRegular"
                                 android:layout_gravity="center"
                                 android:layout_marginHorizontal="@dimen/_8sdp"
                                 android:background="@null"
-                                android:text="D/65 om Nagar New delhi 110044"
+                                android:hint="Location"
                                 android:textColor="@color/tab_heading_two"
                                 android:textColorHint="@color/tab_heading_two" />
-
 
                         </LinearLayout>
 
@@ -227,6 +251,7 @@
                 android:layout_width="wrap_content"
                 android:layout_marginHorizontal="@dimen/_30sdp"
                 android:textSize="@dimen/_11sdp"
+                android:visibility="gone"
                 android:textAllCaps="true"
                 app:layout_constraintTop_toBottomOf="@+id/cardMainSec"
                 app:layout_constraintBottom_toBottomOf="@+id/cardMainSec"

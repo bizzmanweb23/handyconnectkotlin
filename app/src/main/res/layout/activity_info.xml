@@ -73,7 +73,6 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvItems"
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/_20sdp"
@@ -165,6 +164,7 @@
                         android:layout_height="@dimen/_65sdp">
 
                         <ImageView
+                            android:id="@+id/uploadSecondImage"
                             android:scaleType="fitXY"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -196,6 +196,7 @@
                             android:layout_height="@dimen/_65sdp">
 
                             <ImageView
+                                android:id="@+id/uploadThirdImage"
                                 android:scaleType="fitXY"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -246,9 +247,11 @@
                     android:textColor="@color/heading3_color"
                     android:text="@string/description_of_the_issue"/>
 
-                 <TextView
+                 <EditText
+                     android:id="@+id/issueDescription"
                     style="@style/tvSemiBold"
                     android:textSize="@dimen/_9sdp"
+                     android:background="@null"
                      android:lineSpacingExtra="@dimen/_3sdp"
                      android:layout_marginBottom="@dimen/_10sdp"
                     android:layout_marginHorizontal="@dimen/_8sdp"

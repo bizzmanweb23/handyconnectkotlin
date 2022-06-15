@@ -1,27 +1,29 @@
 package com.example.handyconnect.activities
 
 import android.Manifest
-import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
 import com.example.handyconnect.R
 import com.example.handyconnect.adapters.ImagesUploadAdapter
 import com.example.handyconnect.adapters.ItemsInfoAdapter
+import com.example.handyconnect.clickListeners.ServiceItemClick
+import com.example.handyconnect.common.UtilsClass.getPath
 import com.example.handyconnect.network.responses.categoryServices.CategoryDetailData
+import com.example.handyconnect.session.SessionNotNull
 import com.example.handyconnect.utils.isNetworkConnected
 import com.example.handyconnect.utils.showToast
 import com.example.handyconnect.viewModel.SimpleViewCategoryVM
@@ -29,9 +31,10 @@ import kotlinx.android.synthetic.main.activity_info.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import java.io.ByteArrayOutputStream
 import java.io.File
 
-class InfoActivity : AppCompatActivity() {
+class InfoActivity : AppCompatActivity(), ServiceItemClick {
     private var categoryDetailVM : SimpleViewCategoryVM ?= null
     var cateDetailList : ArrayList<CategoryDetailData> = ArrayList()
 
@@ -42,19 +45,31 @@ class InfoActivity : AppCompatActivity() {
     private val PERMISSION_REQUEST_CODE = 2
     val GALLERY_REQUESTCODE = 3
     val CAMERA_REQUESTCODE = 4
+    private var loginPref : SessionNotNull ?= null
+    var uploadImageAtPlace : String ?= null
+    var profileImageOne = ""
+    var profileImageTwo = ""
+    var profileImageThree = ""
+    var CATEGORY_ID = ""
+    var SERVICE_ID = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
 
-        cateDetailList.clear()
+        loginPref = SessionNotNull(this)
+
 
         callFrom = intent?.extras?.get("callFrom") as String?
         categoryDetailVM = SimpleViewCategoryVM()
 
         // call service detail api
         if(isNetworkConnected()){
-            categoryDetailVM?.simpleViewCategoryDetails(this,intent.extras?.get("CategoryID") as String)
+            (intent.extras?.get("CategoryID") as String?)?.let {
+                categoryDetailVM?.simpleViewCategoryDetails(this,
+                    it
+                )
+            }
         }
         else
         {
@@ -67,10 +82,13 @@ class InfoActivity : AppCompatActivity() {
     }
 
     private fun listeners() {
+
+        // for getting list of service from server
         categoryDetailVM?.simpleViewCategoryDetails?.observe(this, Observer { user ->
             if(user != null){
                 if(user.SuccessCode == 200){
                     if(user.data != null){
+                        cateDetailList.clear()
                         Log.d("listSize",cateDetailList.size.toString())
                         cateDetailList.addAll(user.data)
                         setAdapter()
@@ -82,6 +100,38 @@ class InfoActivity : AppCompatActivity() {
             }
             else{
                showToast(this,"Something went wrong")
+            }
+        })
+
+         // for upload image and send to server
+        categoryDetailVM?.uploadImage?.observe(this, Observer { user ->
+              if(user != null){
+                  if(user.SuccessCode == 200){
+                      showToast(this,"success")
+                  }
+              }
+            else{
+                  showToast(this,"Something went wrong")
+
+              }
+
+        })
+
+        categoryDetailVM?.selectedService?.observe(this, Observer { user ->
+            if(user != null){
+                if(user.SuccessCode == 200){
+                    startActivity(
+                        Intent(this, RequestReceivedActivity::class.java)
+                            .putExtra("call_From", callFrom)
+                    )
+                }
+                else{
+                    showToast(this,"failure")
+                }
+            }
+            else{
+                showToast(this,"Something went wrong")
+
             }
         })
     }
@@ -105,8 +155,28 @@ class InfoActivity : AppCompatActivity() {
             else {
                 mImageParts = null
             }
+
+            Log.d("mImageParts",mImageParts.toString())
+
+//            val loggedUserId =
+//               RequestBody.create(
+//                    "text/plain".toMediaTypeOrNull(),
+//                   loginPref?.loginData?.id.toString()
+//                ) // Parameter request body
+
+          //  Log.d("userID",loggedUserId.toString())
+            if(isNetworkConnected()) {
+                categoryDetailVM?.uploadImageMethod(
+                    this,
+                    mImageParts!!,
+                    loginPref?.loginData?.id.toString()
+                )
+
+            }
+            else{
+                showToast(this,"No internet connection")
+            }
         }
-     //   categoryDetailVM?.uploadImageMethod(this,mImageParts!!,)
 
     }
 
@@ -203,6 +273,8 @@ class InfoActivity : AppCompatActivity() {
 
     private fun clicks() {
         firstImage.setOnClickListener {
+            // first image click
+            uploadImageAtPlace = "1"
             if (checkPermission()) {
                 chooseImage(this)
             }
@@ -210,6 +282,29 @@ class InfoActivity : AppCompatActivity() {
                 requestPermission()
             }
         }
+
+        secondImage.setOnClickListener {
+            // second image click
+            uploadImageAtPlace = "2"
+            if (checkPermission()) {
+                chooseImage(this)
+            }
+            else {
+                requestPermission()
+            }
+        }
+
+        thirdImage.setOnClickListener {
+            // third image click
+            uploadImageAtPlace = "3"
+            if (checkPermission()) {
+                chooseImage(this)
+            }
+            else {
+                requestPermission()
+            }
+        }
+
         dropdown.setOnClickListener {
             if(isSelected) {
                 rvItems.visibility = View.VISIBLE
@@ -226,9 +321,27 @@ class InfoActivity : AppCompatActivity() {
         }
 
         butSubmit.setOnClickListener {
-            startActivity(Intent(this, RequestReceivedActivity::class.java)
-                .putExtra("call_From",callFrom))
+             // submit button click
+            updateDataProfile(profileImageOne)
+            updateDataProfile(profileImageTwo)
+            updateDataProfile(profileImageThree)
+
+            if(SERVICE_ID == ""){
+              showToast(this,"Please select service")
+            }else {
+                if(isNetworkConnected()){
+                    categoryDetailVM?.simpleServiceDescriptionMethod(this,loginPref?.loginData?.id.toString(),
+                        CATEGORY_ID,SERVICE_ID,issueDescription.text.toString())
+                }
+            }
         }
+    }
+
+    fun getImageUriFromBitmap(context: Context, bitmap: Bitmap): Uri{
+        val bytes = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
+        val path = MediaStore.Images.Media.insertImage(context.contentResolver, bitmap, "Title", null)
+        return Uri.parse(path.toString())
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -237,21 +350,90 @@ class InfoActivity : AppCompatActivity() {
             when(requestCode){
                 CAMERA_REQUESTCODE -> {
                     val selectedImage = data?.extras?.get("data") as Bitmap
-                    uploadFirstImage.setImageBitmap(selectedImage)
-//                    var image_Uri =  getImageUriFromBitmap(this,selectedImage)
-//                    Glide.with(this).load(image_Uri).error(R.drawable.ic_user)
-//                        .placeholder(R.drawable.ic_user).into(dp)
-//                    profileImage =  getPath(this,image_Uri)
+
+                //    val selectedImage = data?.data as Uri
+
+                    if(uploadImageAtPlace == "1"){
+                        uploadFirstImage.setImageBitmap(selectedImage)
+                        var image_Uri =  getImageUriFromBitmap(this,selectedImage)
+
+                        Glide.with(this).load(image_Uri).error(R.drawable.ic_user)
+                            .placeholder(R.drawable.ic_user).into(uploadFirstImage)
+                        profileImageOne =  getPath(this,image_Uri)
+                        // getProfileImage(uploadFirstImage,selectedImage)
+                    }
+
+                    else if(uploadImageAtPlace == "2"){
+                        uploadSecondImage.setImageBitmap(selectedImage)
+                        var image_Uri =  getImageUriFromBitmap(this,selectedImage)
+
+                        Glide.with(this).load(image_Uri).error(R.drawable.ic_user)
+                            .placeholder(R.drawable.ic_user).into(uploadSecondImage)
+                        profileImageTwo =  getPath(this,image_Uri)
+
+                      //  getProfileImage(uploadSecondImage,selectedImage)
+                    }
+
+                    else if(uploadImageAtPlace == "3"){
+                        uploadThirdImage.setImageBitmap(selectedImage)
+
+                        var image_Uri =  getImageUriFromBitmap(this,selectedImage)
+
+                        Glide.with(this).load(image_Uri).error(R.drawable.ic_user)
+                            .placeholder(R.drawable.ic_user).into(uploadThirdImage)
+                        profileImageThree =  getPath(this,image_Uri)
+
+                      //  getProfileImage(uploadThirdImage,selectedImage)
+                    }
+
                 }
                 GALLERY_REQUESTCODE -> {
                     val selectedImage = data?.data as Uri
+                    Log.d("selectedImage",selectedImage.toString())
+
+                    if(uploadImageAtPlace == "1"){
+                        uploadFirstImage.setImageURI(selectedImage)
+
+                        Glide.with(this).load(selectedImage).error(R.drawable.ic_user)
+                            .placeholder(R.drawable.ic_user).into(uploadFirstImage)
+                        profileImageOne =  getPath(this,selectedImage)
+                        Log.d("profileImageOne",profileImageOne)
+
+
+                      //  getProfileImage(uploadFirstImage,selectedImage)
+
+                    }
+                    else if(uploadImageAtPlace == "2"){
+                        uploadSecondImage.setImageURI(selectedImage)
+                        Glide.with(this).load(selectedImage).error(R.drawable.ic_user)
+                            .placeholder(R.drawable.ic_user).into(uploadSecondImage)
+                        profileImageTwo =  getPath(this,selectedImage)
+
+                     //   getProfileImage(uploadSecondImage,selectedImage)
+                    }
+                    else if(uploadImageAtPlace == "3"){
+                        uploadThirdImage.setImageURI(selectedImage)
+                        Glide.with(this).load(selectedImage).error(R.drawable.ic_user)
+                            .placeholder(R.drawable.ic_user).into(uploadThirdImage)
+                        profileImageThree =  getPath(this,selectedImage)
+
+                     //   getProfileImage(uploadThirdImage,selectedImage)
+
+                    }
+
 //                    Glide.with(this).load(selectedImage).error(R.drawable.ic_user)
 //                        .placeholder(R.drawable.ic_user).into(uploadFirstImage)
-                       uploadFirstImage.setImageURI(selectedImage)
                     //  profileImage = getPath(this,selectedImage)
                 }
             }
         }
+    }
+
+    private fun getProfileImage(uploadFirstImage: ImageView, selectedImage: Bitmap) {
+        var image_Uri =  getImageUriFromBitmap(this,selectedImage)
+        Glide.with(this).load(image_Uri).error(R.drawable.ic_user)
+            .placeholder(R.drawable.ic_user).into(uploadFirstImage)
+        profileImageOne =  getPath(this,image_Uri)
     }
 
     private fun setImagesAdapter() {
@@ -260,7 +442,12 @@ class InfoActivity : AppCompatActivity() {
     }
 
     private fun setAdapter() {
-        adapter = ItemsInfoAdapter(this,cateDetailList)
+        adapter = ItemsInfoAdapter(this,cateDetailList,this)
         rvItems.adapter = adapter
+    }
+
+    override fun onItemClick(position: Int, categoryId: String, id: String) {
+        CATEGORY_ID = categoryId
+        SERVICE_ID = id
     }
 }

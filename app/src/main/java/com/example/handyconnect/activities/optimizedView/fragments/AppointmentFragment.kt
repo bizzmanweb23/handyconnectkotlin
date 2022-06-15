@@ -1,10 +1,6 @@
 package com.example.handyconnect.activities.optimizedView.fragments
 
-import android.app.AlertDialog
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.provider.MediaStore
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -42,7 +38,6 @@ class AppointmentFragment : Fragment() {
         (requireContext() as HomeActivity).toolbarSec.visibility = View.GONE
         appointVM = AppointmentListViewModel()
 
-
         if(requireActivity().isNetworkConnected()){
             appointVM?.appointmentListMethod(requireContext())
         }
@@ -52,9 +47,9 @@ class AppointmentFragment : Fragment() {
 
         listeners()
 
-
         setTablayouts()
         clicks()
+
     }
 
     private fun listeners() {

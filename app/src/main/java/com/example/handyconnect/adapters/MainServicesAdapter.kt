@@ -11,6 +11,7 @@ import com.example.handyconnect.activities.InfoActivity
 import com.example.handyconnect.activities.RegisterActivity
 import com.example.handyconnect.loadImageCategory
 import com.example.handyconnect.network.responses.simpleviewCategory.Category
+import com.example.handyconnect.session.SessionNotNull
 import kotlinx.android.synthetic.main.items_main_services.view.*
 
 class MainServicesAdapter(var context: Context,val categoryList: ArrayList<Category>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -33,7 +34,7 @@ class MainServicesAdapter(var context: Context,val categoryList: ArrayList<Categ
         }
 
         holder.itemView.mainSec.setOnClickListener {
-            if(isRegister){
+            if(SessionNotNull(context).isLogin == true){
                 callInfoActivity(data.id)
             }
             else{
@@ -56,7 +57,7 @@ class MainServicesAdapter(var context: Context,val categoryList: ArrayList<Categ
 
     override fun getItemCount() = categoryList.size
 
-    companion object {
-        var isRegister = false
-    }
+//    companion object {
+//        var isRegister = false
+//    }
 }

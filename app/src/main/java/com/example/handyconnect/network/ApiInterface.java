@@ -6,7 +6,9 @@ import com.example.handyconnect.network.responses.appointmentListNew.Appointment
 import com.example.handyconnect.network.responses.categoryServices.CategoryServicesDetailsResponse;
 import com.example.handyconnect.network.responses.imageUpload.ImageUploadResponse;
 import com.example.handyconnect.network.responses.login.LoginSuccessResponse;
+import com.example.handyconnect.network.responses.profileResponse.getProfileResponse.GetProfileResponse;
 import com.example.handyconnect.network.responses.register.RegisterResponse;
+import com.example.handyconnect.network.responses.simpleViewDescription.SimpleViewDeriptionResponse;
 import com.example.handyconnect.network.responses.simpleviewCategory.SimpleViewCategoryResponse;
 
 import okhttp3.MultipartBody;
@@ -51,10 +53,34 @@ public interface ApiInterface {
     Call<AppointmentListResponseNew> appointmentList();
 
     @Multipart
-    @POST("simpleview/remark/upload/image")
+    @POST("simpleview/remark/upload/image/")
     Call<ImageUploadResponse> imageUploadApi(
             @Part MultipartBody.Part remark_upload,
-            @Part("uid") RequestBody uid);
+            @Part("uid") String uid);
+
+    @FormUrlEncoded
+    @POST("simpleview/description/")
+    Call<SimpleViewDeriptionResponse> simpleViewDes(
+            @Field("user_id") String user_id,
+            @Field("categorey_id") String categorey_id,
+            @Field("service_id") String service_id,
+            @Field("description") String description
+    );
+
+    @GET("optimize/profile/management")
+    Call<GetProfileResponse> getProfileApi(
+            @Query("uid") String uid
+    );
+
+    @FormUrlEncoded
+    @POST("optimize/profile/update")
+    Call<GetProfileResponse> profileUpdateApi(
+            @Field("uid") String uid,
+            @Field("name") String name,
+            @Field("email") String email,
+            @Field("mobile") String mobile,
+            @Field("location") String location
+    );
 
 
 
