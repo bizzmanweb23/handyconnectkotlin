@@ -26,7 +26,6 @@
             android:textColor="@color/white"
             android:textSize="@dimen/_8sdp" />
 
-
         <ImageView
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_22sdp"
@@ -503,8 +502,6 @@
                 android:orientation="vertical"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_35sdp"/>
-
-
 
         </LinearLayout>
 

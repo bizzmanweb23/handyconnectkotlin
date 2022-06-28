@@ -11,6 +11,7 @@ import com.example.handyconnect.activities.optimizedView.HomeActivity
 import com.example.handyconnect.adapters.AppointmentAdapter
 import com.example.handyconnect.adapters.PastAppointmentAdapter
 import com.example.handyconnect.network.responses.appointmentListNew.AppointmentSubListNew
+import com.example.handyconnect.session.SessionNotNull
 import com.example.handyconnect.utils.isNetworkConnected
 import com.example.handyconnect.utils.showToast
 import com.example.handyconnect.viewModel.AppointmentListViewModel
@@ -23,6 +24,8 @@ class AppointmentFragment : Fragment() {
     private var pastAdapter : PastAppointmentAdapter?= null
     private var appointVM : AppointmentListViewModel ?= null
     var appointmentList  : ArrayList<AppointmentSubListNew> = ArrayList()
+
+    private var loginPref : SessionNotNull ?= null
 
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle? ): View? {
@@ -37,6 +40,7 @@ class AppointmentFragment : Fragment() {
         appointmentList.clear()
         (requireContext() as HomeActivity).toolbarSec.visibility = View.GONE
         appointVM = AppointmentListViewModel()
+        loginPref = SessionNotNull(requireContext())
 
         if(requireActivity().isNetworkConnected()){
             appointVM?.appointmentListMethod(requireContext())
@@ -44,6 +48,8 @@ class AppointmentFragment : Fragment() {
         else{
             showToast(requireContext(),"No internet connection")
         }
+
+
 
         listeners()
 
@@ -61,6 +67,20 @@ class AppointmentFragment : Fragment() {
                     }
                     setAppointmentAdapter()
 
+                }
+                else{
+                    showToast(requireContext(),user.massage)
+                }
+            }
+            else{
+                showToast(requireContext(),"Something went wrong")
+            }
+        })
+
+        appointVM?.pastAppointmentList?.observe(requireActivity(), Observer { user ->
+            if(user != null){
+                if(user.success == 200){
+                    showToast(requireContext(),user.massage)
                 }
                 else{
                     showToast(requireContext(),user.massage)
@@ -88,11 +108,25 @@ class AppointmentFragment : Fragment() {
                     0 ->{
                         pastAppointmentToolbar.visibility = View.GONE
                         toolbarSec.visibility = View.VISIBLE
-                        setAppointmentAdapter()
+                        if(requireActivity().isNetworkConnected()){
+                            appointVM?.appointmentListMethod(requireContext())
+                        }
+                        else{
+                            showToast(requireContext(),"No internet connection")
+                        }
+
+                      //  setAppointmentAdapter()
                     }
                     1 ->{
                         pastAppointmentToolbar.visibility = View.VISIBLE
                         toolbarSec.visibility = View.GONE
+
+                        if(requireActivity().isNetworkConnected()){
+                            appointVM?.pastAppointmentListMethod(requireContext(),loginPref?.loginData?.id!!)
+                        }
+                        else{
+                            showToast(requireContext(),"No internet connection")
+                        }
                         setPostAppointmentAdapter()
                     }
                 }

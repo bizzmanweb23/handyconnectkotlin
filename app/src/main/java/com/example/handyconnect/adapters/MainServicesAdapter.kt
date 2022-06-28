@@ -35,7 +35,7 @@ class MainServicesAdapter(var context: Context,val categoryList: ArrayList<Categ
 
         holder.itemView.mainSec.setOnClickListener {
             if(SessionNotNull(context).isLogin == true){
-                callInfoActivity(data.id)
+                callInfoActivity(data.id,data.name)
             }
             else{
                 callRegisterActivity()
@@ -49,10 +49,11 @@ class MainServicesAdapter(var context: Context,val categoryList: ArrayList<Categ
 
     }
 
-    private fun callInfoActivity(id : String) {
+    private fun callInfoActivity(id: String, name: String) {
         context.startActivity(Intent(context, InfoActivity::class.java)
             .putExtra("callFrom","callFromMain")
-            .putExtra("CategoryID",id))
+            .putExtra("CategoryID",id)
+            .putExtra("CategoryName",name))
     }
 
     override fun getItemCount() = categoryList.size

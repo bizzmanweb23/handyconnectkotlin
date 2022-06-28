@@ -22,7 +22,7 @@ import com.example.handyconnect.adapters.ImagesUploadAdapter
 import com.example.handyconnect.adapters.ItemsInfoAdapter
 import com.example.handyconnect.clickListeners.ServiceItemClick
 import com.example.handyconnect.common.UtilsClass.getPath
-import com.example.handyconnect.network.responses.categoryServices.CategoryDetailData
+import com.example.handyconnect.model.SelectedServiceModel
 import com.example.handyconnect.session.SessionNotNull
 import com.example.handyconnect.utils.isNetworkConnected
 import com.example.handyconnect.utils.showToast
@@ -36,10 +36,11 @@ import java.io.File
 
 class InfoActivity : AppCompatActivity(), ServiceItemClick {
     private var categoryDetailVM : SimpleViewCategoryVM ?= null
-    var cateDetailList : ArrayList<CategoryDetailData> = ArrayList()
+  //  var cateDetailList : ArrayList<CategoryDetailData> = ArrayList()
+    var arrayList : ArrayList<SelectedServiceModel> = ArrayList()
 
     private var adapter : ItemsInfoAdapter ?= null
-    private var imagesAdapter : ImagesUploadAdapter?= null
+    private var imagesAdapter : ImagesUploadAdapter ?= null
     var isSelected = true
     var callFrom : String ?= null
     private val PERMISSION_REQUEST_CODE = 2
@@ -59,9 +60,10 @@ class InfoActivity : AppCompatActivity(), ServiceItemClick {
 
         loginPref = SessionNotNull(this)
 
-
         callFrom = intent?.extras?.get("callFrom") as String?
         categoryDetailVM = SimpleViewCategoryVM()
+
+        cateName.setText(intent?.extras?.get("CategoryName") as String?)
 
         // call service detail api
         if(isNetworkConnected()){
@@ -79,6 +81,7 @@ class InfoActivity : AppCompatActivity(), ServiceItemClick {
         setImagesAdapter()
         clicks()
         listeners()
+
     }
 
     private fun listeners() {
@@ -88,9 +91,14 @@ class InfoActivity : AppCompatActivity(), ServiceItemClick {
             if(user != null){
                 if(user.SuccessCode == 200){
                     if(user.data != null){
-                        cateDetailList.clear()
-                        Log.d("listSize",cateDetailList.size.toString())
-                        cateDetailList.addAll(user.data)
+
+                        arrayList.clear()
+
+                        for(i in 0 until user.data.size){
+                            arrayList.add(SelectedServiceModel(false,user.data))
+                        }
+
+                        Log.d("listSize",arrayList.size.toString())
                         setAdapter()
                     }
                 }
@@ -112,9 +120,7 @@ class InfoActivity : AppCompatActivity(), ServiceItemClick {
               }
             else{
                   showToast(this,"Something went wrong")
-
               }
-
         })
 
         categoryDetailVM?.selectedService?.observe(this, Observer { user ->
@@ -131,7 +137,6 @@ class InfoActivity : AppCompatActivity(), ServiceItemClick {
             }
             else{
                 showToast(this,"Something went wrong")
-
             }
         })
     }
@@ -225,8 +230,7 @@ class InfoActivity : AppCompatActivity(), ServiceItemClick {
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.CAMERA,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
-            ),
-            PERMISSION_REQUEST_CODE )
+            ), PERMISSION_REQUEST_CODE )
     }
 
 
@@ -360,7 +364,7 @@ class InfoActivity : AppCompatActivity(), ServiceItemClick {
                         Glide.with(this).load(image_Uri).error(R.drawable.ic_user)
                             .placeholder(R.drawable.ic_user).into(uploadFirstImage)
                         profileImageOne =  getPath(this,image_Uri)
-                        // getProfileImage(uploadFirstImage,selectedImage)
+                         //getProfileImage(uploadFirstImage,selectedImage)
                     }
 
                     else if(uploadImageAtPlace == "2"){
@@ -442,7 +446,7 @@ class InfoActivity : AppCompatActivity(), ServiceItemClick {
     }
 
     private fun setAdapter() {
-        adapter = ItemsInfoAdapter(this,cateDetailList,this)
+        adapter = ItemsInfoAdapter(this,arrayList,this)
         rvItems.adapter = adapter
     }
 

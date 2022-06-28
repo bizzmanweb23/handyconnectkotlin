@@ -13,6 +13,7 @@ import com.example.handyconnect.viewModel.SimpleViewCategoryVM
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
     private var categoryVM : SimpleViewCategoryVM  ?= null
     private var adapter : MainServicesAdapter ?= null
     var categoryList : ArrayList<Category> = ArrayList()
@@ -24,13 +25,13 @@ class MainActivity : AppCompatActivity() {
         categoryList.clear()
         categoryVM = SimpleViewCategoryVM()
 
-
         if(isNetworkConnected()){
             categoryVM?.simpleViewCategoryMethod(this)
         }
         else{
             showToast(this,"No internet connection")
         }
+
         clicks()
         listeners()
 

@@ -10,5 +10,5 @@ data class CategoryDetailData(
     val service_unique_id: String,
     val tax: String,
     val unit_of_measure_id: String,
-    val updated_at: String
+    val updated_at: String,
 )

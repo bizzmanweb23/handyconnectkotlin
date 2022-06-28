@@ -1,6 +1,7 @@
 package com.example.handyconnect.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,14 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.handyconnect.R
 import com.example.handyconnect.clickListeners.ServiceItemClick
 import com.example.handyconnect.model.SelectedServiceModel
-import com.example.handyconnect.network.responses.categoryServices.CategoryDetailData
 import kotlinx.android.synthetic.main.items_info.view.*
 
-class ItemsInfoAdapter(var context: Context,val cateDetailList: ArrayList<CategoryDetailData>,
-            val listener : ServiceItemClick ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ItemsInfoAdapter( var context: Context, val cateDetailList: ArrayList<SelectedServiceModel>,
+    val listener: ServiceItemClick ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    var isSelected = true
-    var arrayList : ArrayList<SelectedServiceModel> = ArrayList()
+    var arrayList : ArrayList<String> = ArrayList()
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){}
 
@@ -26,29 +25,60 @@ class ItemsInfoAdapter(var context: Context,val cateDetailList: ArrayList<Catego
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        var data = cateDetailList[position]
+        var listData = cateDetailList[position]
 
-        if(data.service_name != null){
-            holder.itemView.tvItem.setText(data.service_name)
+        if(listData.data[position].service_name != null){
+            holder.itemView.tvItem.setText(listData.data[position].service_name)
+        }
+
+        if(listData.isSelected){
+            holder.itemView.tvItem.setTextColor(ContextCompat.getColor(context,R.color.heading2_color))
+            holder.itemView.img_tick.visibility = View.VISIBLE
+        }
+        else{
+            holder.itemView.tvItem.setTextColor(ContextCompat.getColor(context,R.color.heading3_color))
+            holder.itemView.img_tick.visibility = View.GONE
         }
 
         holder.itemView.mainSection.setOnClickListener{
-            if(isSelected){
-                holder.itemView.tvItem.setTextColor(ContextCompat.getColor(context,R.color.heading2_color))
-                holder.itemView.img_tick.visibility = View.VISIBLE
-                isSelected = false
+            selectedItems(position)
 
-            }
-            else{
-                holder.itemView.tvItem.setTextColor(ContextCompat.getColor(context,R.color.heading3_color))
-                holder.itemView.img_tick.visibility = View.GONE
-                isSelected = true
+//            if(isSelected){
+//                holder.itemView.tvItem.setTextColor(ContextCompat.getColor(context,R.color.heading2_color))
+//                holder.itemView.img_tick.visibility = View.VISIBLE
+//                isSelected = false
+//            }
+//            else{
+//                holder.itemView.tvItem.setTextColor(ContextCompat.getColor(context,R.color.heading3_color))
+//                holder.itemView.img_tick.visibility = View.GONE
+//                isSelected = true
+//            }
+
+            if(listData.data[position].category_id != null || listData.data[position].id != null) {
+                listener.onItemClick(position, listData.data[position].category_id, listData.data[position].id)
             }
 
-            if(data.category_id != null || data.service_unique_id != null) {
-                listener.onItemClick(position, data.category_id, data.id)
+        }
+
+    }
+
+    private fun selectedItems(position: Int) {
+        for(i in 0 until cateDetailList.size-1){
+            if(i == position){
+
+                if(cateDetailList[i].isSelected){
+                    cateDetailList[i].isSelected = false
+                }
+                else{
+                    cateDetailList[i].isSelected = true
+                    arrayList.add(cateDetailList[i].data[i].id)
+                    break
+                }
+
             }
         }
+        notifyDataSetChanged()
+        Log.d("serviceIdList",arrayList.size.toString())
 
 
 
